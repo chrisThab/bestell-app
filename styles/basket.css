@@ -1,0 +1,22 @@
+#basket {
+    width: 300px;
+    display: flex;
+    position: sticky;
+    right: 0px;
+    top: 130px;
+    background-color: rgb(235, 160, 49, 0.4);
+    height: 130px;
+    border-radius: 8px;
+}
+
+#addbtn{
+    width: 26px;
+    height: 26px;
+    background-image: url(/assets/icons/addbtn.png);
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    position: relative;
+    bottom: 0px;
+}
