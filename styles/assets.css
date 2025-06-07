@@ -52,3 +52,11 @@ main{
     text-overflow: ellipsis;
 }
 
+#text{
+    text-overflow: ellipsis;
+}
+
+p{
+    overflow: hidden;
+    max-height: 40px;
+}

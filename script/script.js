@@ -13,14 +13,17 @@ function getDishes(element) {
     let theDish = document.getElementById("allDishes");
     theDish.innerHTML += `
     <div id="dishes">
-                <div id="oneDish">
-                    <p>"${element.name}"</p>
-                    <p>${element.description}</p>
-                    <p>${element.price} €</p></div>
-                <div id="addbtn"></div>
-            </div>    
-        `
+        <div id="oneDish">
+            <p>"${element.name}"</p>
+            <p>${element.description}</p>
+            <p>${element.price} €</p>
+        </div>
+        <div id="addbtn" onclick="addToBasket()">
+        </div>
+    </div>    
+    `
 }
+
 function getEveryDish() {
     for (const element of dishes) {
         getDishes(element);
@@ -28,32 +31,34 @@ function getEveryDish() {
 }
 getEveryDish();
 
-function getSideDishes(element) {
-    let theSideDish = document.getElementById("sideDishes");
-    theSideDish.innerHTML += `<div class="dishView">
-    <div class="theDishes">
-        <p>"${element.name}"</p>
-        <p>${element.description}</p>
-        <p>${element.price} €</p>
-    </div>
-    <button onclick="addToBasket()" id="addbtn"></button>
-    </div> `
+//sidedishes
+
+let beilagen = document.getElementById("sideDishes");
+
+function getSideDishes() {
+    sideDishes.forEach(element => {
+        beilagen.innerHTML += `<div id="dishes">
+        <div id="oneDish">
+            <p>"${element.name}"</p>
+            <p>${element.description}</p>
+            <p>${element.price} €</p>
+        </div>
+        <div id="addbtn" onclick="addToBasket()">
+        </div>
+    </div>`
+    });
 }
-function getEverySideDish() {
-    for (const element of sideDishes) {
-        getSideDishes(element);
-    }
-}
-getEverySideDish();
+getSideDishes();
 
 //dessert
 
 //addbtn
 
-function addToBasket(element) {
-    let addTo = document.getElementById('basket');
-    addTo = document.innerHTML += `<div>
-    <p>"${element.name}"</p>
-    <p>${element.price} €</p>
-    </div>`
+let basket = [];
+basket = document.getElementById("basket");
+
+function addToBasket() {
+    if (basket === null) {
+        return basket.map((dishes, idOfDishes))
+    }
 }
