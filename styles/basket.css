@@ -1,12 +1,14 @@
 #basket {
-    width: 300px;
+    width: 400px;
     display: flex;
     position: sticky;
     right: 0px;
     top: 130px;
     background-color: rgb(235, 160, 49, 0.4);
-    height: 130px;
+    height: fit-content;
     border-radius: 8px;
+    flex-direction: column;
+    padding: 5px;
 }
 
 #addbtn{
@@ -19,4 +21,35 @@
     border: 1px solid rgba(0, 0, 0, 0.4);
     position: relative;
     bottom: 0px;
+}
+
+.basketHeader{
+    text-align: center;
+    width: 100%;
+    margin: 8px;
+}
+
+.innerBasket{
+    display: flex;
+    justify-content: space-between;
+}
+
+#price{
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+}
+
+#total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+
+#delivery{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
 }
