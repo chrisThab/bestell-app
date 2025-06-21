@@ -29,7 +29,7 @@ const dishes = [
         "description": "",
         "id" : 4
     }
-]
+];
 
 const sideDishes = [
     {
@@ -44,7 +44,7 @@ const sideDishes = [
         "description": "So langweilig wie es klingt, einfach Reis",
         "id" : 11
     },
-]
+];
 
 const desserts = [
     {
@@ -59,4 +59,4 @@ const desserts = [
         "description": "Mindestens 3 Kugeln Eis",
         "id" : 21
     },
-]
+];
