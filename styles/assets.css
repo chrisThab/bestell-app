@@ -14,12 +14,10 @@ body {
 }
 
 main{
-    margin: 16px;
+    padding: 16px;
     width: 100%;
-}
-
-.over{
-    display: flex;
+    display: block;
+    flex-direction: column;
 }
 
 .theDishes{
@@ -32,24 +30,16 @@ main{
     width: 95%;
 }
 
-#dishes{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+#oneDish{
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    height: 120px;
     width: 100%;
-}
-
-#oneDish{
-    width: 90%;
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-overflow: ellipsis;
+    padding: 8px;
 }
 
 #text{

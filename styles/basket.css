@@ -23,6 +23,18 @@
     bottom: 0px;
 }
 
+#addBtn {
+    width: 26px;
+    height: 26px;
+    background-image: url(/assets/icons/addbtn.png);
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    position: relative;
+    bottom: 0px;
+}
+
 .basketHeader{
     text-align: center;
     width: 100%;

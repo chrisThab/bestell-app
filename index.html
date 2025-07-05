@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,6 @@
 
 </head>
 <body>
-
     <header>
         <h1>BestellApp</h1>
         <nav>
@@ -38,22 +37,26 @@
             </ul>
         </nav>
     </header>
+    <main id="over">
+        <h1 class="headline">bestell-mal-was-gutes</h1>
+        <div id="rating"> </div>
+        <img src="" alt="Hauptgerichte">
+        <h2>Hauptgerichte</h2>
 
-    <div class="over" id="over">
-        <main>
-            <h1 class="headline">bestell-mal-was-gutes</h1>
-            <div id="rating"></div>
-            <img src="" alt="Hauptgerichte">
-            <h2>Hauptgerichte</h2>
-            <div  id="allDishes"></div>
-            <img src="" alt="Beilagen">
-            <h2>Beilagen</h2>
-            <div id="sideDishes"></div>
-            <img src="" alt="desserts">
-            <h2>Desserts</h2>
-            <div id="desserts">
+        <div id="allDishes">
+            <div id="oneDish" onclick="intoBasket('currentDish')">
+                <div id="theDish"></div>
+                <div id="theDescription"></div>
+                <div id="thePrice"></div>
             </div>
-        </main>
+        </div>
+
+        <!-- <img src="" alt="Beilagen">
+        <h2>Beilagen</h2>
+        <div id="sideDishes"> </div>
+        <img src="" alt="desserts">
+        <h2>Desserts</h2>
+        <div id="desserts"> </div> -->
         <div id="basket">
             <h2 class="basketHeader">Warenkorb</h2>
             <div class="innerBasket">
@@ -64,15 +67,12 @@
             <div id="delivery"></div>
             <div id="total"></div>
         </div>
-    </div>
-    
+    </main>
     <footer>🦶</footer>
 
 <script src="./script/db.js"></script>
 <script src="./script/template.js"></script>
 <script src="./script/script.js"></script>
-
-
 
 </body>
 </html>
