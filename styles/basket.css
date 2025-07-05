@@ -59,9 +59,13 @@
     padding-top: 8px;
 }
 
-#delivery{
-    width: 100%;
+.delivery{
+    width: auto;
     display: flex;
     justify-content: space-between;
     padding-top: 8px;
+}
+
+#priceWithDelivery{
+    width: auto;
 }

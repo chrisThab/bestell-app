@@ -1,3 +1,9 @@
+
+// consts & varibles
+let counter = 1;
+let delivery = 2.5;
+
+// navbar
 function showSidebar() 
 {
     const sidebar = document.querySelector('.sidebar');
@@ -11,21 +17,25 @@ function hideSidebar()
 };
 
 
-
+// get the dishes
 let currentDish = 0;
 
 function getDishes(){
     let oneDish = dishes[currentDish];
-   
-    document.getElementById('theDish').innerHTML = `"${oneDish['name']}"`;
-    document.getElementById('theDescription').innerHTML = oneDish['description'];
-    document.getElementById('thePrice').innerHTML = `${oneDish['price'].toFixed(2)} €`;
-    
+
+    dishes.forEach(oneDish => {
+        document.getElementById('theDish').innerHTML = `"${oneDish['name']}"`;
+        document.getElementById('theDescription').innerHTML = oneDish['description'];
+        document.getElementById('thePrice').innerHTML = `${oneDish['price']} €`;
+
+    });
 };
 getDishes();
 
-let counter = 1;
 
+
+
+// add to basket
 function intoBasket(){
     let thePrice = dishes[currentDish].price;
     thePrice = counter * thePrice;
@@ -35,14 +45,12 @@ function intoBasket(){
     document.getElementById('price').innerHTML = thePrice.toFixed(2) + ' €';
     if (document.getElementsByName('dishes[currentDish].name')){
         counter++;
-    }
+    };
+    let endSum;
+    let priceWithDelivery = thePrice + delivery;
+    document.getElementById('delivery').innerText = `Lieferung: 2,50 €`;
+    document.getElementById('priceWithDelivery').innerText = `${priceWithDelivery.toFixed(2)} €`;
 };
-
-
-
-
-
-
 
 
 //sidedishes
@@ -81,5 +89,3 @@ function intoBasket(){
 //     }
 // };
 // getDesserts();
-
-//addbtn

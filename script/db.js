@@ -18,15 +18,15 @@ const dishes = [
         "id" : 2
     },
     {
-        "name": "",
+        "name": "Frankfurter",
         "price": 6.50,
-        "description": "",
+        "description": "Ein Paar Würstel mit Senf, Kren und Semmel",
         "id" : 3
     },
     {
-        "name": "",
+        "name": "Großer gemischter Salat",
         "price": 7.50,
-        "description": "",
+        "description": "Salat mit Tomaten, Radieschen, Paprika, Zwiebel, Karotten, Kraut und Kartoffel. Wahlweise mit Kernöl oder Dressing",
         "id" : 4
     }
 ];
