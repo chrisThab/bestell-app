@@ -16,34 +16,42 @@ function hideSidebar()
     sidebar.style.display = 'none';
 };
 
-
-// get the dishes
 let currentDish = 0;
 
-function getDishes(){
-    let oneDish = dishes[currentDish];
+// get the dishes
 
-    dishes.forEach(oneDish => {
-        document.getElementById('theDish').innerHTML = `"${oneDish['name']}"`;
-        document.getElementById('theDescription').innerHTML = oneDish['description'];
-        document.getElementById('thePrice').innerHTML = `${oneDish['price']} €`;
-
-    });
+function allDishes(){
+    for (let index = 0; index < dishes.length; index++) {
+        let element = dishes[index];
+        element = document.getElementById('allDishes').innerHTML += 
+            `<div id="oneDish" onclick="intoBasket('thisDish')">
+            <div id="theDish">"${dishes[index].name}"</div>
+            <div id="theDescription">${dishes[index].description}</div>
+            <div id="thePrice">${dishes[index].price} €</div>
+            </div>`;
+    };
 };
-getDishes();
+
+allDishes();
 
 
+// function getDishes(){
+//     let oneDish = dishes[currentDish];
 
+//         document.getElementById('theDish').innerHTML = `"${oneDish['name']}"`;
+//         document.getElementById('theDescription').innerHTML = oneDish['description'];
+//         document.getElementById('thePrice').innerHTML = `${oneDish['price']} €`;
+//     };
 
 // add to basket
-function intoBasket(){
-    let thePrice = dishes[currentDish].price;
+function intoBasket(thisDish){
+    let thePrice = thisDish.price;
     thePrice = counter * thePrice;
 
-    document.getElementById('articles').innerHTML = dishes[currentDish].name;
+    document.getElementById('articles').innerHTML = thisDish.name;
     document.getElementById('counter').innerHTML = counter;
     document.getElementById('price').innerHTML = thePrice.toFixed(2) + ' €';
-    if (document.getElementsByName('dishes[currentDish].name')){
+    if (document.getElementsByName('thisDish.name')){
         counter++;
     };
     let endSum;
