@@ -1,39 +1,34 @@
-
 // consts & varibles
 let counter = 1;
 let delivery = 2.5;
 
 // navbar
-function showSidebar() 
-{
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'flex';
-};
+function showSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "flex";
+}
 
-function hideSidebar() 
-{
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'none';
-};
+function hideSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "none";
+}
 
 let currentDish = 0;
 
 // get the dishes
 
-function allDishes(){
-    for (let index = 0; index < dishes.length; index++) {
-        let element = dishes[index];
-        element = document.getElementById('allDishes').innerHTML += 
-            `<div id="oneDish" onclick="intoBasket('thisDish')">
-            <div id="theDish">"${dishes[index].name}"</div>
-            <div id="theDescription">${dishes[index].description}</div>
-            <div id="thePrice">${dishes[index].price} €</div>
-            </div>`;
-    };
-};
+function allDishes() {
+  for (let index = 0; index < dishes.length; index++) {
+    let element = dishes[index];
+    element = document.getElementById("allDishes").innerHTML += `
+        <div id="oneDish" onclick="intoBasket(dishes[${index}])">
+            <div id="theDish">"${element.name}"</div>
+            <div id="theDescription">${element.description}</div>
+            <div id="thePrice">${element.price} €</div>
+        </div>`;
+    };};
 
 allDishes();
-
 
 // function getDishes(){
 //     let oneDish = dishes[currentDish];
@@ -44,22 +39,21 @@ allDishes();
 //     };
 
 // add to basket
-function intoBasket(thisDish){
-    let thePrice = thisDish.price;
-    thePrice = counter * thePrice;
+function intoBasket(dishes) {
+  let thePrice = dishes.price;
+  thePrice = counter * thePrice;
 
-    document.getElementById('articles').innerHTML = thisDish.name;
-    document.getElementById('counter').innerHTML = counter;
-    document.getElementById('price').innerHTML = thePrice.toFixed(2) + ' €';
-    if (document.getElementsByName('thisDish.name')){
-        counter++;
-    };
-    let endSum;
-    let priceWithDelivery = thePrice + delivery;
-    document.getElementById('delivery').innerText = `Lieferung: 2,50 €`;
-    document.getElementById('priceWithDelivery').innerText = `${priceWithDelivery.toFixed(2)} €`;
-};
-
+  document.getElementById("articles").innerHTML = dishes.name;
+  document.getElementById("counter").innerHTML = counter;
+  document.getElementById("price").innerHTML = thePrice.toFixed(2) + " €";
+  if (document.getElementsByName(dishes.name)) {
+    counter++;
+  }
+  let endSum;
+  let priceWithDelivery = thePrice + delivery;
+  document.getElementById("delivery").innerText = `Lieferung: 2,50 €`;
+  document.getElementById("priceWithDelivery").innerText = `${priceWithDelivery.toFixed(2)} €`;
+}
 
 //sidedishes
 
