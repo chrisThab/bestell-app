@@ -69,3 +69,8 @@
 #priceWithDelivery{
     width: auto;
 }
+
+#articles{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,22 +1,21 @@
-// consts & varibles
+// consts & variables
 let counter = 1;
 let delivery = 2.5;
+let currentDish = 0;
 
 // navbar
 function showSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "flex";
-}
+};
 
 function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
-}
+};
 
-let currentDish = 0;
 
 // get the dishes
-
 function allDishes() {
   for (let index = 0; index < dishes.length; index++) {
     let element = dishes[index];
@@ -27,33 +26,38 @@ function allDishes() {
             <div id="thePrice">${element.price} €</div>
         </div>`;
     };};
-
 allDishes();
-
-// function getDishes(){
-//     let oneDish = dishes[currentDish];
-
-//         document.getElementById('theDish').innerHTML = `"${oneDish['name']}"`;
-//         document.getElementById('theDescription').innerHTML = oneDish['description'];
-//         document.getElementById('thePrice').innerHTML = `${oneDish['price']} €`;
-//     };
 
 // add to basket
 function intoBasket(dishes) {
-  let thePrice = dishes.price;
-  thePrice = counter * thePrice;
+    let thePrice = dishes.price;
+    thePrice = counter * thePrice;
 
-  document.getElementById("articles").innerHTML = dishes.name;
-  document.getElementById("counter").innerHTML = counter;
-  document.getElementById("price").innerHTML = thePrice.toFixed(2) + " €";
-  if (document.getElementsByName(dishes.name)) {
-    counter++;
-  }
-  let endSum;
-  let priceWithDelivery = thePrice + delivery;
-  document.getElementById("delivery").innerText = `Lieferung: 2,50 €`;
-  document.getElementById("priceWithDelivery").innerText = `${priceWithDelivery.toFixed(2)} €`;
-}
+    document.getElementById("articles").innerHTML += 
+    `<div>${dishes.name}</div>`;
+    
+    document.getElementById("counter").innerHTML += 
+    `<div>${counter}</div>`;
+
+    document.getElementById("price").innerHTML += 
+    `<div>${thePrice.toFixed(2) + " €"}</div>`;
+
+    if (dishes.name == dishes.name) {
+        counter++;
+    };
+
+    // document.getElementById("articles").innerHTML += 
+    // `<div>${dishes.name}</div>`;
+    // document.getElementById("counter").innerHTML += 
+    // `<div>${counter}</div>`;
+    // document.getElementById("price").innerHTML += 
+    // `<div>${thePrice.toFixed(2) + " €"}</div>`;
+
+    let endSum = 0;
+    let priceWithDelivery = thePrice + delivery;
+    document.getElementById("delivery").innerText = `Lieferung: 2,50 €`;
+    document.getElementById("priceWithDelivery").innerText = `${priceWithDelivery.toFixed(2)} €`;
+};
 
 //sidedishes
 
