@@ -29,36 +29,35 @@ function allDishes() {
 allDishes();
 
 // add to basket
+
+let basketArticles = {};
+
 function intoBasket(dishes) {
-    let thePrice = dishes.price;
-    thePrice = counter * thePrice;
+  if (basketArticles[dishes.name]) {
+    basketArticles[dishes.name].counter++;
+  } else { basketArticles[dishes.name] = {
+    name: dishes.name,
+    counter: 1,
+    price: dishes.price
+  };
+  updateBasket();
 
-    document.getElementById("articles").innerHTML += 
-    `<div>${dishes.name}</div>`;
-    
-    document.getElementById("counter").innerHTML += 
-    `<div>${counter}</div>`;
-
-    document.getElementById("price").innerHTML += 
-    `<div>${thePrice.toFixed(2) + " €"}</div>`;
-
-    if (dishes.name == dishes.name) {
-        counter++;
-    };
-
-    // document.getElementById("articles").innerHTML += 
-    // `<div>${dishes.name}</div>`;
-    // document.getElementById("counter").innerHTML += 
-    // `<div>${counter}</div>`;
-    // document.getElementById("price").innerHTML += 
-    // `<div>${thePrice.toFixed(2) + " €"}</div>`;
-
-    let endSum = 0;
-    let priceWithDelivery = thePrice + delivery;
-    document.getElementById("delivery").innerText = `Lieferung: 2,50 €`;
-    document.getElementById("priceWithDelivery").innerText = `${priceWithDelivery.toFixed(2)} €`;
+  };
 };
 
+function updateBasket() {
+  let oneItem = document.getElementById('basket');
+  oneItem.innerHTML = ''; // Den Warenkorb leeren, bevor wir ihn aktualisieren
+  for (let key in basketArticles) {
+      let item = basketArticles[key];
+      oneItem.innerHTML += `
+        <div class ='innerBasket'>
+          <div id='article'>${item.name}</div>
+          <div id='counter'>${item.counter}</div>
+          <div id='price'>${item.price * item.counter} €</div>
+          </div>`
+  };
+};
 //sidedishes
 
 // let beilagen = document.getElementById("sideDishes");
