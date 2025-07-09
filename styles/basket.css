@@ -1,13 +1,10 @@
 #basket {
     width: 400px;
     display: flex;
-    position: sticky;
-    right: 0px;
-    top: 130px;
     background-color: rgb(235, 160, 49, 0.4);
     height: fit-content;
     border-radius: 8px;
-    padding: 8px;
+    padding: 16px;
     flex-direction: column;
 }
 
@@ -45,4 +42,33 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+#article{
+    width: 60%;
+}
+
+#counter{
+    width: 20%;
+}
+
+#price{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+}
+
+#warenkorb{
+    display: none;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 400px;
+    background-color: blanchedalmond;
+}
+
+#priceAllDishes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
 }

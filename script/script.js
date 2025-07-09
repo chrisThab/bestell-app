@@ -1,7 +1,8 @@
 // consts & variables
 let counter = 1;
 let delivery = 2.5;
-let currentDish = 0;
+let priceAllDishes;
+let basketArticles = {};
 
 // navbar
 function showSidebar() {
@@ -14,7 +15,6 @@ function hideSidebar() {
   sidebar.style.display = "none";
 };
 
-
 // get the dishes
 function allDishes() {
   for (let index = 0; index < dishes.length; index++) {
@@ -23,16 +23,14 @@ function allDishes() {
         <div id="oneDish" onclick="intoBasket(dishes[${index}])">
             <div id="theDish">"${element.name}"</div>
             <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price} €</div>
+            <div id="thePrice">${element.price.toFixed(2)} €</div>
         </div>`;
     };};
 allDishes();
 
 // add to basket
-
-let basketArticles = {};
-
 function intoBasket(dishes) {
+  document.getElementById('warenkorb').style = 'display: flex';
   if (basketArticles[dishes.name]) {
     basketArticles[dishes.name].counter++;
   } else { basketArticles[dishes.name] = {
@@ -40,57 +38,24 @@ function intoBasket(dishes) {
     counter: 1,
     price: dishes.price
   };
-  updateBasket();
-
-  };
+};
+updateBasket();
 };
 
 function updateBasket() {
-  let oneItem = document.getElementById('basket');
-  oneItem.innerHTML = ''; // Den Warenkorb leeren, bevor wir ihn aktualisieren
+  let oneDish = document.getElementById('basket');
+  oneDish.innerHTML = '';
+  let totalPrice = 0;
   for (let key in basketArticles) {
       let item = basketArticles[key];
-      oneItem.innerHTML += `
+      let multiplePrice = item.price * item.counter;
+      oneDish.innerHTML += `
         <div class ='innerBasket'>
           <div id='article'>${item.name}</div>
           <div id='counter'>${item.counter}</div>
-          <div id='price'>${item.price * item.counter} €</div>
-          </div>`
-  };
+          <div id='price'>${multiplePrice.toFixed(2)} €</div>
+          </div>`;
+          totalPrice += item.price * item.counter;
+        };
+      document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div>${totalPrice.toFixed(2)} €</div>`;
 };
-//sidedishes
-
-// let beilagen = document.getElementById("sideDishes");
-
-// function getSideDishes(){
-//     sideDishes.forEach(element => {
-//         beilagen.innerHTML += `<div id="dishes">
-//         <div id="oneDish" onclick="addToBasket(${element.id})">
-//             <p>"${element.name}"</p>
-//             <p>${element.description}</p>
-//             <p>${element.price.toFixed(2)} €</p>
-//         </div>
-//         <div id="addbtn" onclick="addToBasket(${element.id})">
-//         </div>
-//     </div>`
-//     });
-// };
-// getSideDishes();
-
-// //dessert
-
-// function getDesserts(){
-//     dessert = document.getElementById("desserts");
-//     for (let index = 0; index < desserts.length; index++) {
-//         dessert.innerHTML += `
-//         <div id="dishes">
-//             <div id="oneDish" onclick="addToBasket(${desserts[index].id})">
-//                 <p>"${desserts[index].name}"</p>
-//                 <p>${desserts[index].description}</p>
-//                 <p>${desserts[index].price.toFixed(2)} €</p>
-//             </div>
-//             <div id="addbtn" onclick="addToBasket()"></div>
-//         </div>`
-//     }
-// };
-// getDesserts();
