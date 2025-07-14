@@ -52,3 +52,7 @@ footer{
 h2{
     margin-bottom: 8px;
 }
+
+*{
+    scrollbar-color: rgb(255, 128, 0) white;
+}
