@@ -45,7 +45,19 @@
 }
 
 #article{
-    width: 60%;
+    width: 40%;
+}
+
+#minus{
+    width: 10%;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+#plus{
+    width: 10%;
+    background-color: aqua;
+    cursor: pointer;
 }
 
 #counter{
@@ -58,7 +70,7 @@
     justify-content: end;
 }
 
-#warenkorb{
+#outerBasket{
     display: none;
     align-items: flex-start;
     flex-direction: column;

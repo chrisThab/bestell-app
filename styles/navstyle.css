@@ -16,6 +16,7 @@
 nav {
     background-color: aqua;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 nav ul {
@@ -41,6 +42,7 @@ nav a {
 
 nav a:hover {
     background-color: darkkhaki;
+    border-radius: 8px;
 }
 
 nav li:first-child {

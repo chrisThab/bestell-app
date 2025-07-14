@@ -16,8 +16,25 @@ body {
 main{
     padding: 16px;
     width: 100%;
-    display: block;
-    flex-direction: column;
+    display: flex;
+    gap: 8px;
+}
+
+footer{
+    height: 240px;
+    background-color: blanchedalmond;
+}
+
+#one{
+    width: 100%;
+}
+
+#two{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 130px;
 }
 
 .theDishes{
