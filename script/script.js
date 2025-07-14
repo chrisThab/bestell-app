@@ -57,6 +57,7 @@ allDesserts();
 
 // add to basket
 function intoBasket(dishes) {
+  document.getElementById('two').style = 'display: block';
   document.getElementById('outerBasket').style = 'display: flex';
   if (basketArticles[dishes.name]) {
     basketArticles[dishes.name].counter++;
@@ -80,9 +81,9 @@ function updateBasket() {
     oneDish.innerHTML += `
       <div class='innerBasket'>
         <div id='article'>${item.name}</div>
-        <button id="minus" onclick='minusOne("${item.name}")'><img src="" alt="minus"></button>
+        <button id="minus" onclick='minusOne("${item.name}")'></button>
         <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'><img src="" alt="plus"></button>
+        <button id="plus" onclick='plusOne("${item.name}")'></button>
         <div id='price'>${multiplePrice.toFixed(2)} €</div>
       </div>`;
     totalPrice += multiplePrice;
