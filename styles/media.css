@@ -8,3 +8,12 @@
         display: block;
     }
 }
+
+@media(max-width: 750px){
+    .p{
+        text-overflow: ellipsis;
+    }
+    div{
+        text-overflow: ellipsis;
+    }
+}

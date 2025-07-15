@@ -27,20 +27,16 @@
         <h1 class="smythe-regular">BestellApp</h1>
         <nav>
             <ul class="sidebar">
-                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="black">
-                            <path
-                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                        </svg></a></li>
+                <li class="closer" onclick="hideSidebar()"><img src="./assets/icons/close.png" alt="schließen"></li>
                 <li><a href="#linkDishes">Hauptgerichte</a></li>
-                <li><a href="#sidedishes">Beilagen</a></li>
-                <li><a href="#dessert">Desserts</a></li>
+                <li><a href="#besides">Beilagen</a></li>
+                <li><a href="#sweets">Desserts</a></li>
                 <li><a href="#footer">Kontakt</a></li>
             </ul>
             <ul>
                 <li class="hideOnMobile"><a href="#linkDishes">Hauptgerichte</a></li>
-                <li class="hideOnMobile"><a href="#sidedishes">Beilagen</a></li>
-                <li class="hideOnMobile"><a href="#dessert">Desserts</a></li>
+                <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
+                <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
                 <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
                 <li class="menuBtn" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"                           height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg></a></li>
@@ -60,10 +56,23 @@
                 <img src="./assets/img/nudeln.jpg"" alt="Nudeln">
             </div>
             <div id="allDishes"></div>
-            <h2>Beilagen</h2>
+            <h2 id="besides">Beilagen</h2>
+            <div class="dishes">
+                <img src="./assets/img/salad.jpg" alt="Vogerlsalat">
+                <img src="./assets/img/rice.jpg" alt="reis">
+                <img src="./assets/img/dumplings.jpg" alt="semmelknödel">
+                <img src="./assets/img/naan.jpg" alt="naan-brot">
+            </div>
             <div id="sidedishes"></div>
-            <h2>Desserts</h2>
+            <h2 id="sweets">Desserts</h2>
+            <div class="dishes">
+                <img src="./assets/img/tiramisu.jpg" alt="tiramisu">
+                <img src="./assets/img/joghurt.jpg" alt="Weichseljoghurt">
+                <img src="./assets/img/ice.jpg" alt="Eisbecher">
+                <img src="./assets/img/crepe.jpg" alt="Palatschinken">
+            </div>
             <div id="dessert"></div>
+            <div class="screenTop"><a href="#">nach oben</a></div>
         </section>
         <section id="two" class="smythe-regular">
             <div id="outerBasket">
@@ -79,6 +88,7 @@
             </div>
         </section>
     </main>
+    
     <footer id="footer">
         <div class="socialMedia">
             <a class="logo" href="https://www.facebook.com/"><img class="logo" src="./assets/icons/facebook.png" alt="facebook-logo"></a>

@@ -44,6 +44,18 @@ const sideDishes = [
         "description": "So langweilig wie es klingt, einfach Reis",
         "id" : 11
     },
+    {
+        "name": "Semmelknödel",
+        "price": 4.50,
+        "description": "Traditionell zubereitet, herzhaft gewürzt",
+        "id" : 12
+    },
+    {
+        "name": "Naan_Brot",
+        "price": 2.50,
+        "description": "Typisch indisches Brot, passend zu vielen Rezepten",
+        "id" : 12
+    }
 ];
 
 const desserts = [
@@ -59,4 +71,16 @@ const desserts = [
         "description": "Mindestens 3 Kugeln Eis",
         "id" : 21
     },
+    {
+        "name": "Klassisches Tiramisu",
+        "price": 6.00,
+        "description": "Der Klassiker aus Italien",
+        "id" : 22
+    },
+    {
+        "name": "Weichseljoghurt-Becher",
+        "price": 7.50,
+        "description": "Immer frische Zutaten von unseren Bauern aus der Region",
+        "id" : 23
+    }
 ];

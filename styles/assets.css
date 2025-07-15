@@ -53,6 +53,9 @@ h2{
     margin-bottom: 8px;
 }
 
-*{
-    scrollbar-color: rgb(255, 128, 0) white;
+.screenTop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
