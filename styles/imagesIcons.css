@@ -4,7 +4,7 @@
     height: 130px;
     padding: 0px;
     margin: 0px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .headline {
@@ -22,7 +22,7 @@
     height: auto;
     width: 100%;
     padding-bottom: 8px;
-    border-radius: 8px;
+    border-radius: 6px;
     gap: 8px;
 }
 
@@ -42,6 +42,7 @@
     background-size: cover;
     align-items: center;
     background-position: center;
+    border-radius: 6px;
 }
 
 .logo{

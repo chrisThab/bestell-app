@@ -10,10 +10,39 @@
 }
 
 @media(max-width: 750px){
-    .p{
-        text-overflow: ellipsis;
-    }
     div{
         text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    #outerBasket{
+        margin-left: 8px;
+    }
+
+    main{
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    #two{
+        position: sticky;
+        bottom: 60px;
+    }
+
+    #outerBasket{
+        width: 300px;
+        margin: 0px;
+    }
+
+    #innerBasket{
+        width: 300px;
+        margin: 0px;
+    }
+}
+@media(max-width: 600px){
+    main{
+        align-items: center;
     }
 }

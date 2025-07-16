@@ -3,7 +3,7 @@
     display: flex;
     background-color: rgb(235, 160, 49, 0.4);
     height: fit-content;
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 16px;
     flex-direction: column;
     gap: 8px;
@@ -24,7 +24,7 @@
 #plus {
     width: 20px;
     height: 20px;
-    background-image: url(/assets/icons/addbtn.png);
+    background-image: url(/assets/icons/plus.png);
     border-radius: 4px;
     color: black;
     cursor: pointer;
@@ -69,7 +69,7 @@
     background-color: blanchedalmond;
     margin-left: 16px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 #priceAllDishes{
