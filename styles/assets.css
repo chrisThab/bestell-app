@@ -22,6 +22,7 @@ main{
     padding: 16px;
     width: 100%;
     display: flex;
+    transition: 0.4s;
 }
 
 footer{
@@ -70,7 +71,6 @@ h2{
 
 .screenTop{
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 100%;
 }

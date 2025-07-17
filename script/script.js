@@ -4,12 +4,6 @@
 let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
-let starRating = 4.2;
-
-function stars(){
-  document.getElementById('rating').innerText =  ` ` + `${starRating} von 5 Sternen`
-};
-stars();
 
 // navbar
 function showSidebar() {
@@ -21,43 +15,6 @@ function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
 };
-
-// get the dishes
-function allDishes() {
-  for (let index = 0; index < dishes.length; index++) {
-    let element = dishes[index];
-    element = document.getElementById("allDishes").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(dishes[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allDishes();
-
-function allSideDishes() {
-  for (let index = 0; index < sideDishes.length; index++) {
-    let element = sideDishes[index];
-    element = document.getElementById("sidedishes").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(sideDishes[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allSideDishes();
-
-function allDesserts() {
-  for (let index = 0; index < desserts.length; index++) {
-    let element = desserts[index];
-    element = document.getElementById("dessert").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(desserts[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allDesserts();
 
 // add to basket
 function intoBasket(dishes) {
@@ -90,7 +47,7 @@ function updateBasket() {
         <button id="plus" onclick='plusOne("${item.name}")'></button>
         <div id='price'>${multiplePrice.toFixed(2)} €</div>
       </div>`;
-    totalPrice += multiplePrice;
+      totalPrice += multiplePrice;
   };
   document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div>${totalPrice.toFixed(2)} €</div>`;
   if (totalPrice == 0) {
@@ -124,10 +81,12 @@ function minusOne(itemName) {
 };
 
 // bestellung abschließen
-
 function buyArticles() {
   document.getElementById('buy').innerText = 'Wir haben ihre Bestellung entgegengenommen ! \n Sie werden zur Zahlung weitergeleitet.';
   setTimeout(()=>{
-    window.location.href='http://127.0.0.1:5501/script/indexPayment.html';
+    document.getElementById('buy').innerText = 'Sie haben eine Testbestellung abgeschloßen.';
+    document.getElementById('basket').innerHTML = '';
+    updateBasket();
   }, 4000);
+
 };
