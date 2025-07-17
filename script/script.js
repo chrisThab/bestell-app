@@ -73,8 +73,8 @@ updateBasket();
 // basket update
 function updateBasket() {
   let oneDish = document.getElementById('basket');
-  oneDish.innerHTML = '';
   let totalPrice = 0;
+  oneDish.innerHTML = '';
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
@@ -97,8 +97,12 @@ function updateBasket() {
 // buttons plus minus
 function plusOne(itemName) {
   if (basketArticles[itemName]) {
+    if (basketArticles[itemName].counter == 50){
+      document.getElementById('plus').disabled = true;
+    } else {
     basketArticles[itemName].counter++;
     document.getElementById(`counter-${itemName}`).innerText = basketArticles[itemName].counter;
+    };
     updateBasket();
   };
 };
@@ -113,4 +117,13 @@ function minusOne(itemName) {
     };
     updateBasket();
   };
+};
+
+// bestellung abschließen
+
+function buyArticles() {
+  let pay = document.getElementById('buy').innerText = 'Wir haben ihre Bestellung entgegengenommen ! \n Sie werden zur Zahlung weitergeleitet.';
+  setTimeout(()=>{
+    window.location.href='http://127.0.0.1:5501/script/indexPayment.html';
+  }, 4000);
 };

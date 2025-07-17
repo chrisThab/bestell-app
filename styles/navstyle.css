@@ -1,18 +1,14 @@
-.burgermenucontainer {
-    width: 30px;
-    height: 20px;
-    background-color: bisque;
-    cursor: pointer;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 6px;
-    z-index: 3;
-}
 
 nav {
     background-color: rgb(255, 143, 31);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+a{
+    height: 40px;
 }
 
 nav ul {
@@ -28,8 +24,8 @@ nav li {
 }
 
 nav a {
-    height: 100%;
-    padding: 0 20px;
+    height: 40px;
+    padding: 0 17px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -67,7 +63,7 @@ nav li:first-child {
     position: fixed;
     top: 40;
     right: 0;
-    height: 100vh;
+    height: fit-content;
     width: 250px;
     background-color: rgba(255, 255, 255, 0.199);
     -webkit-backdrop-filter: blur(10px);
