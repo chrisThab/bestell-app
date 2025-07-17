@@ -1,0 +1,115 @@
+.imgHead{
+    width: 1000%;
+    object-fit: cover;
+    height: 130px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 6px;
+}
+
+.restaurant{
+    display: flex;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 8px;
+    background-image: url(/assets/img/mediteranesEssen.jpg);
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-end;
+    background-position: center;
+    border-radius: 6px;
+    overflow: visible;
+}
+
+footer div img{
+    width: 40px;
+    height: 40px;
+}
+
+#restaurantLogo{
+    width: 70px;
+    height: 70px;
+    bottom: -35px;
+    position: relative;
+    z-index: 4;
+}
+
+#restaurantLogo img{
+    height: 70px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);;
+}
+
+.dishes {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    padding-bottom: 8px;
+    border-radius: 6px;
+    gap: 8px;
+}
+
+.dishes img {
+    width: -webkit-fill-available;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+@media(max-width: 750px) {
+    div {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    #outerBasket {
+        margin-left: 8px;
+    }
+
+    main {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    #two {
+        position: sticky;
+        bottom: 60px;
+    }
+
+    #outerBasket {
+        width: 300px;
+        margin: 0px;
+    }
+
+    #innerBasket {
+        width: 300px;
+        margin: 0px;
+    }
+}
+
+@media(max-width: 600px) {
+    main {
+        align-items: center;
+        padding: 2px;
+    }
+
+    .restaurant {
+        margin-bottom: 40px;
+    }
+}
+
+@media(max-width: 400px) {
+    .dishes {
+        width: 100%;
+        gap: 0px;
+        justify-content: space-evenly;
+        margin: 0px;
+    }
+
+    .dishes img {
+        width: 80px;
+    }
+}

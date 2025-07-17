@@ -1,4 +1,3 @@
-
 // mit inspiration von YOUTUBE: web dev simplified shopping cart
 
 // consts & variables
@@ -6,7 +5,6 @@ let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
 let starRating = 4.2;
-
 
 function stars(){
   document.getElementById('rating').innerText =  ` ` + `${starRating} von 5 Sternen`

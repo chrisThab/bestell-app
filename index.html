@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/navstyle.css">
     <link rel="stylesheet" href="./styles/media.css">
-    <link rel="stylesheet" href="./styles/imagesIcons.css">
+    <link rel="stylesheet" href="./styles/imagesAndIcons.css">
     <link rel="stylesheet" href="./styles/dishes.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,10 +43,11 @@
         </nav>
     </header>
     <main>
-        <section id="one" class="smythe-regular">
+        <section id="one" class="smythe-regular" onclick="hideSidebar()">
             <div class="restaurant">
-                <h1 class="headline">Random-Restaurant</h1>
+                <div id="restaurantLogo"><img src="./assets/icons/cookingLogo.png" alt="Kochmütze mit Messer"></div>
             </div>
+            <h1 class="headline">Random-Restaurant</h1>
             <div id="stars">Bewertung: <span id="rating"></span></div>
             <h2 id="linkDishes">Hauptgerichte</h2>
             <div class="dishes">
@@ -91,17 +92,16 @@
     </main>
     
     <footer id="footer">
-        <div class="socialMedia">
-            <a class="logo" href="https://www.facebook.com/"><img class="logo" src="./assets/icons/facebook.png" alt="facebook-logo"></a>
-            <a class="logo" href="https://www.twitter.com/"><img class="logo" src="./assets/icons/twitterpng.webp" alt="x-logo"></a>
-            <a class="logo" href="https://www.instagram.com/"><img class="logo" src="./assets/icons/instagram.png" alt="instagram-logo"></a>
+        <div>
+            <a href="https://www.facebook.com/"><img src="./assets/icons/facebook.png" alt="facebook-logo"></a>
+            <ahref="https://www.twitter.com/"><img src="./assets/icons/twitterpng.webp" alt="x-logo"></ahref=>
+            <a href="https://www.instagram.com/"><img src="./assets/icons/instagram.png" alt="instagram-logo"></a>
         </div>
         <div class="team">Code wurde geschrieben von Christian Thabar im Auftrag der Developer Akademie</div>
         <div class="officials"></div>
     </footer>
 
     <script src="./script/db.js"></script>
-    <script src="./script/template.js"></script>
     <script src="./script/script.js"></script>
 
 </body>

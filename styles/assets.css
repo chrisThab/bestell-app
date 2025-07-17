@@ -1,3 +1,7 @@
+*{
+    scrollbar-color: white rgb(255, 128, 0);
+}
+
 header{
     width: 100%;
     padding: 40px 40px;
@@ -28,6 +32,12 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.headline {
+    font-size: 40px;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #stars{

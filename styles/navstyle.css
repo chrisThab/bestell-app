@@ -88,3 +88,14 @@ nav li:first-child {
 .menuBtn {
     display: none;
 }
+
+@media(max-width: 800px) {
+
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+}
