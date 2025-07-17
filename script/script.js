@@ -1,11 +1,17 @@
 
 // mit inspiration von YOUTUBE: web dev simplified shopping cart
 
-
 // consts & variables
 let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
+let starRating = 4.2;
+
+
+function stars(){
+  document.getElementById('rating').innerText =  ` ` + `${starRating} von 5 Sternen`
+};
+stars();
 
 // navbar
 function showSidebar() {
@@ -122,7 +128,7 @@ function minusOne(itemName) {
 // bestellung abschließen
 
 function buyArticles() {
-  let pay = document.getElementById('buy').innerText = 'Wir haben ihre Bestellung entgegengenommen ! \n Sie werden zur Zahlung weitergeleitet.';
+  document.getElementById('buy').innerText = 'Wir haben ihre Bestellung entgegengenommen ! \n Sie werden zur Zahlung weitergeleitet.';
   setTimeout(()=>{
     window.location.href='http://127.0.0.1:5501/script/indexPayment.html';
   }, 4000);

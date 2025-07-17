@@ -30,6 +30,11 @@ footer{
     text-align: center;
 }
 
+#stars{
+    color: rgb(255, 128, 0);
+    padding: 8px 0;
+}
+
 #one{
     width: 100%;
 }
