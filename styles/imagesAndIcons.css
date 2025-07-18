@@ -56,13 +56,18 @@ footer div img{
     object-fit: cover;
     border-radius: 6px;
 }
-@media(max-width: 900px) {
+
+@media(max-width: 1170px) {
     .restaurant {
         margin-bottom: 40px;
     }
+
+    #basket{
+        width: 100%;
+    }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 830px) {
     div {
         text-overflow: ellipsis;
         overflow: hidden;
@@ -76,21 +81,21 @@ footer div img{
         padding: 8px;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: center;
     }
 
     #two {
         position: sticky;
-        bottom: 60px;
+        bottom: 40px;
     }
 
     #outerBasket {
-        width: 300px;
+        width: 400px;
         margin: 0px;
     }
 
     #innerBasket {
-        width: 300px;
+        width: 398px;
         margin: 0px;
     }
 }
@@ -106,7 +111,11 @@ footer div img{
     }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 450px) {
+    #two{
+        width: 100%;
+    }
+    
     .dishes {
         width: 100%;
         gap: 0px;
@@ -116,5 +125,16 @@ footer div img{
 
     .dishes img {
         width: 80px;
+    }
+
+    #outerBasket {
+        width: 100%;
+        margin: 0px;
+        font-size: 16px;
+    }
+
+    #innerBasket {
+        width: 100%;
+        margin: 0px;
     }
 }

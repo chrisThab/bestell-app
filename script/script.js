@@ -1,5 +1,3 @@
-// mit inspiration von YOUTUBE: web dev simplified shopping cart
-
 // consts & variables
 let counter = 1;
 let delivery = 2.5;
@@ -33,12 +31,24 @@ updateBasket();
 
 // basket update
 function updateBasket() {
-  let oneDish = document.getElementById('basket');
   let totalPrice = 0;
+  let oneDish = document.getElementById('basket');
   oneDish.innerHTML = '';
-  buildBasket();
+  for (let key in basketArticles) {
+    let item = basketArticles[key];
+    let multiplePrice = item.price * item.counter;
+    oneDish.innerHTML += `
+      <div class='innerBasket'>
+        <div id='article'>${item.name}</div>
+        <button id="minus" onclick='minusOne("${item.name}")'></button>
+        <div id='counter-${item.name}'>${item.counter}</div>
+        <button id="plus" onclick='plusOne("${item.name}")'></button>
+        <div id='price'>${multiplePrice.toFixed(2)} €</div>
+      </div>`;
+      totalPrice += multiplePrice;
+    };
+    totalPrice += delivery;
   document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
-  totalPrice += delivery;
   document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
   if (totalPrice == 0 || totalPrice == 2.5) {
     document.getElementById('outerBasket').style = 'display: none';
@@ -82,21 +92,4 @@ function buyArticles() {
       document.getElementById('buy').innerText = 'Jetzt bestellen !';
     }, 3000);
   }, 3000);
-};
-
-// basket template
-function buildBasket(){
-  for (let key in basketArticles) {
-    let item = basketArticles[key];
-    let multiplePrice = item.price * item.counter;
-    oneDish.innerHTML += `
-      <div class='innerBasket'>
-        <div id='article'>${item.name}</div>
-        <button id="minus" onclick='minusOne("${item.name}")'></button>
-        <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'></button>
-        <div id='price'>${multiplePrice.toFixed(2)} €</div>
-      </div>`;
-      totalPrice += multiplePrice;
-  };
 };
