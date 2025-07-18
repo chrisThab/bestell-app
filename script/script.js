@@ -36,21 +36,11 @@ function updateBasket() {
   let oneDish = document.getElementById('basket');
   let totalPrice = 0;
   oneDish.innerHTML = '';
-  for (let key in basketArticles) {
-    let item = basketArticles[key];
-    let multiplePrice = item.price * item.counter;
-    oneDish.innerHTML += `
-      <div class='innerBasket'>
-        <div id='article'>${item.name}</div>
-        <button id="minus" onclick='minusOne("${item.name}")'></button>
-        <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'></button>
-        <div id='price'>${multiplePrice.toFixed(2)} €</div>
-      </div>`;
-      totalPrice += multiplePrice;
-  };
-  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div>${totalPrice.toFixed(2)} €</div>`;
-  if (totalPrice == 0) {
+  buildBasket();
+  document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
+  totalPrice += delivery;
+  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
+  if (totalPrice == 0 || totalPrice == 2.5) {
     document.getElementById('outerBasket').style = 'display: none';
   };
 };
@@ -85,8 +75,28 @@ function buyArticles() {
   document.getElementById('buy').innerText = 'Wir haben ihre Bestellung entgegengenommen ! \n Sie werden zur Zahlung weitergeleitet.';
   setTimeout(()=>{
     document.getElementById('buy').innerText = 'Sie haben eine Testbestellung abgeschloßen.';
-    document.getElementById('basket').innerHTML = '';
-    updateBasket();
-  }, 4000);
+    document.getElementById('buy').disabled = true;
+    setTimeout(() =>{
+      basketArticles = {};
+      updateBasket();
+      document.getElementById('buy').innerText = 'Jetzt bestellen !';
+    }, 3000);
+  }, 3000);
+};
 
+// basket template
+function buildBasket(){
+  for (let key in basketArticles) {
+    let item = basketArticles[key];
+    let multiplePrice = item.price * item.counter;
+    oneDish.innerHTML += `
+      <div class='innerBasket'>
+        <div id='article'>${item.name}</div>
+        <button id="minus" onclick='minusOne("${item.name}")'></button>
+        <div id='counter-${item.name}'>${item.counter}</div>
+        <button id="plus" onclick='plusOne("${item.name}")'></button>
+        <div id='price'>${multiplePrice.toFixed(2)} €</div>
+      </div>`;
+      totalPrice += multiplePrice;
+  };
 };

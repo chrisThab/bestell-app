@@ -2,32 +2,27 @@ const dishes = [
     {
         "name": "Gebratete Nudeln",
         "price": 9.80,
-        "description": "Nudeln gebraten mit Gemüse, optional mit Huhn, Rind, Schwein oder Garnelen",
-        "id" : 0
+        "description": "Nudeln gebraten mit Gemüse, optional mit Huhn, Rind, Schwein oder Garnelen"
     },
     {
         "name": "Pizza Margeritha",
         "price": 8.90,
-        "description": "Original aus dem Pizzaofen bei 500° gebacken, Tomatensauce, Büffelmozarella und Basilikum",
-        "id" : 1
+        "description": "Original aus dem Pizzaofen bei 500° gebacken, Tomatensauce, Büffelmozarella und Basilikum"
     },
     {
         "name": "Schnitzel mit Pommes",
         "price": 10.50,
-        "description": "Herzhaft weichgeklopftes Rindsschnitzel mit Panier, als Beilage gibt es Pommes von steirischen Bauern, alternativ auch Erdäpfel oder Salat",
-        "id" : 2
+        "description": "Herzhaft weichgeklopftes Rindsschnitzel mit Panier, als Beilage gibt es Pommes von steirischen Bauern, alternativ auch Erdäpfel oder Salat"
     },
     {
         "name": "Frankfurter",
         "price": 6.50,
-        "description": "Ein Paar Würstel mit Senf, Kren und Semmel",
-        "id" : 3
+        "description": "Ein Paar Würstel mit Senf, Kren und Semmel"
     },
     {
         "name": "Großer gemischter Salat",
         "price": 7.50,
-        "description": "Salat mit Tomaten, Radieschen, Paprika, Zwiebel, Karotten, Kraut und Kartoffel. Wahlweise mit Kernöl oder Dressing",
-        "id" : 4
+        "description": "Salat mit Tomaten, Radieschen, Paprika, Zwiebel, Karotten, Kraut und Kartoffel. Wahlweise mit Kernöl oder Dressing"
     }
 ];
 
@@ -35,26 +30,22 @@ const sideDishes = [
     {
         "name": "Vogerlsalat",
         "price": 5.50,
-        "description": "Knackiger Vogerlsalat mit Kartoffeln, Speck und Knoblauch. Natürlich mit Kernöl serviert",
-        "id" : 10
+        "description": "Knackiger Vogerlsalat mit Kartoffeln, Speck und Knoblauch. Natürlich mit Kernöl serviert"
     },
     {
         "name": "Reis",
         "price": 2.50,
-        "description": "So langweilig wie es klingt, einfach Reis",
-        "id" : 11
+        "description": "So langweilig wie es klingt, einfach Reis"
     },
     {
         "name": "Semmelknödel",
         "price": 4.50,
-        "description": "Traditionell zubereitet, herzhaft gewürzt",
-        "id" : 12
+        "description": "Traditionell zubereitet, herzhaft gewürzt"
     },
     {
         "name": "Naan_Brot",
         "price": 2.50,
-        "description": "Typisch indisches Brot, passend zu vielen Rezepten",
-        "id" : 12
+        "description": "Typisch indisches Brot, passend zu vielen Rezepten"
     }
 ];
 
@@ -62,25 +53,21 @@ const desserts = [
     {
         "name": "Crepe",
         "price": 2.50,
-        "description": "Oder auf gut deutsch, Eipalatschinken mit Eis nach Wahl, seblstverständlich mit Schokosauce",
-        "id" : 20
+        "description": "Oder auf gut deutsch, Eipalatschinken mit Eis nach Wahl, seblstverständlich mit Schokosauce"
     },
     {
         "name": "Eisturm",
         "price": 4.50,
-        "description": "Mindestens 3 Kugeln Eis",
-        "id" : 21
+        "description": "Mindestens 3 Kugeln Eis"
     },
     {
         "name": "Klassisches Tiramisu",
         "price": 6.00,
-        "description": "Der Klassiker aus Italien",
-        "id" : 22
+        "description": "Der Klassiker aus Italien"
     },
     {
         "name": "Weichseljoghurt-Becher",
         "price": 7.50,
-        "description": "Immer frische Zutaten von unseren Bauern aus der Region",
-        "id" : 23
+        "description": "Immer frische Zutaten von unseren Bauern aus der Region"
     }
 ];
