@@ -24,27 +24,29 @@
 #plus {
     width: 20px;
     height: 20px;
-    background-image: url(/assets/icons/plus.png);
     border-radius: 4px;
     color: black;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.4);
     position: relative;
     bottom: 0px;
-    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #minus{
     width: 20px;
         height: 20px;
-        background-image: url(/assets/icons/minus.png);
         border-radius: 4px;
         color: black;
         cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.4);
         position: relative;
         bottom: 0px;
-        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
 #article{
