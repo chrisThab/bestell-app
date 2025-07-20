@@ -55,7 +55,7 @@ h1{
 #two{
     display: none;
     border-radius: 6px;
-    height: fit-content;
+    height: 100vh;
     position: sticky;
     top: 130px;
     z-index: 1;

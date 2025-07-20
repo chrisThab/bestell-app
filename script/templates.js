@@ -1,39 +1,19 @@
  // get the dishes
-function allDishes() {
-  for (let index = 0; index < dishes.length; index++) {
-    let element = dishes[index];
-    element = document.getElementById("allDishes").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(dishes[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allDishes();
-
-function allSideDishes() {
-  for (let index = 0; index < sideDishes.length; index++) {
-    let element = sideDishes[index];
-    element = document.getElementById("sidedishes").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(sideDishes[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allSideDishes();
-
-function allDesserts() {
-  for (let index = 0; index < desserts.length; index++) {
-    let element = desserts[index];
-    element = document.getElementById("dessert").innerHTML += `
-        <div id="oneDish" onclick="intoBasket(desserts[${index}])">
-            <div id="theDish">"${element.name}"</div>
-            <div id="theDescription">${element.description}</div>
-            <div id="thePrice">${element.price.toFixed(2)} €</div>
-        </div>`;
-    };};
-allDesserts();
+function displayDishes(dishArray, targetDivId) {
+  const targetDiv = document.getElementById(targetDivId);
+  targetDiv.innerHTML = '';
+  for (let index = 0; index < dishArray.length; index++){
+    let element = dishArray[index];
+    targetDiv.innerHTML += `
+    <div id="oneDish" onclick='intoBasket(${JSON.stringify(element)})'>
+      <div class="articleStructure"><div id="theDish">"${element.name}"</div>
+      <div id="theDescription">${element.description}</div>
+      <div id="thePrice">${element.price.toFixed(2)} €</div></div>
+      <div class="addTo"><img src="./assets/icons/plus.png" alt="plusButton"></div>`
+  };};
+displayDishes(dishes, "allDishes");
+displayDishes(sideDishes, "sidedishes");
+displayDishes(desserts, "dessert");
 
 let starRating = 4.2;
 

@@ -9,10 +9,11 @@
 
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/navstyle.css">
     <link rel="stylesheet" href="./styles/imagesAndIcons.css">
     <link rel="stylesheet" href="./styles/dishes.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/media.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +77,9 @@
             </div>
             <div id="dessert"></div>
             <div class="screenTop"><a href="#">nach oben</a></div>
+
+            <div id="shoppingBasket" onclick="toggleBasket()" class="dNone"><img src="./assets/icons/shoppingBag.png"
+                    alt="Warenkorb"></div>
         </section>
         <section id="two" class="smythe-regular">
             <div id="outerBasket">
@@ -91,6 +95,7 @@
                 <div id="priceAllDishes"></div>
                 <div id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
             </div>
+            
         </section>
     </main>
     <footer id="footer">

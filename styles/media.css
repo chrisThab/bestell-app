@@ -1,0 +1,105 @@
+@media screen and (min-width: 751px) and (max-width: 1200px){
+    #two {
+        position: fixed;
+        top: 165px;
+        right: 16px;
+        height: fit-content;
+        display: none;
+        z-index: 3;
+        transition: 0.8s;
+    }
+
+}
+
+@media(max-width: 900px){
+    #shoppingBasket{
+        display: flex;
+        position: fixed;
+        top: 165px;
+        right: 16px;
+        height: fit-content;
+        z-index: 3;
+        transition: 0.8s;
+        background-color: rgba(255, 128, 0, 0.6);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 35px;
+        height: 70px;
+        width: 70px;
+        object-fit: cover;
+        cursor: pointer;
+        -webkit-animation: blink 1.5s infinite;
+        -moz-animation: blink 1.5s infinite;
+        -o-animation: blink 1.5s infinite;
+        animation: blink 1.5s infinite;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+
+    #shoppingBasket img{
+        width: 48px;
+        height: 48px;
+        z-index: 5;
+    }
+
+  .restaurant {
+      margin-bottom: 40px;
+  }
+/* 
+    #two{
+        display: none;
+    } */
+}
+
+@-webkit-keyframes blink{
+    0%, 10%{
+    background-color: rgba(255, 128, 0, 0.1);
+    }
+    11%, 20%{
+    background-color: rgba(255, 128, 0, 0.2);
+    }
+    21%, 30%{
+    background-color: rgba(255, 128, 0, 0.4);
+    }
+    31%, 40%{
+    background-color: rgba(255, 128, 0, 0.6);
+    }
+    41%, 50%{
+    background-color: rgba(255, 128, 0, 0.8);
+    }
+    51%, 60%{
+    background-color: rgba(255, 128, 0, 0.8);
+    }
+    61%, 70%{
+    background-color: rgba(255, 128, 0, 0.6);
+    }
+    71%, 80%{
+    background-color: rgba(255, 128, 0, 0.4);
+    }
+    81%, 90%{
+    background-color: rgba(255, 128, 0, 0.2);
+    }
+    91%, 100%{
+    background-color: rgba(255, 128, 0, 0.1);
+    }
+}
+
+@media(max-width:750px) {
+    .dishes {
+        width: 100%;
+        justify-content: space-between;
+        margin: 0px;
+        gap: 0px;
+    }
+
+    .dishes img {
+        max-width: 25%;
+    }
+
+    footer {
+        height: fit-content;
+        padding: 8px;
+    }
+}

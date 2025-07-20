@@ -50,7 +50,7 @@ function updateBasket() {
     totalPrice += delivery;
   document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
   document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
-  if (totalPrice == 0 || totalPrice == 2.5) {
+  if (totalPrice == 0 || totalPrice == 2.5 || window.innerWidth > 900) {
     document.getElementById('outerBasket').style = 'display: none';
   };
 };
@@ -90,6 +90,14 @@ function buyArticles() {
       basketArticles = {};
       updateBasket();
       document.getElementById('buy').innerText = 'Jetzt bestellen !';
-    }, 3000);
-  }, 3000);
+    }, 1500);
+  }, 1500);
+};
+
+function toggleBasket(){
+  if (document.getElementById('two').style.display =='block') {
+    document.getElementById('two').style.display ='none'
+  } else if(document.getElementById('two').style.display =='none') {
+  document.getElementById('two').style.display ='block';
+};
 };
