@@ -38,14 +38,17 @@ function updateBasket() {
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
-    buildInnerBasket();
-      totalPrice += multiplePrice;
-    };
-    totalPrice += delivery;
-  document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
-  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
-  checkVisibility(totalPrice);
-};
+    oneDish.innerHTML += `<div class='innerBasket'>
+    <div id='article'>${item.name}</div>
+    <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
+    <div id='counter-${item.name}'>${item.counter}</div>
+    <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
+    <div id='price'>${multiplePrice.toFixed(2)} €</div></div>`;
+    totalPrice += multiplePrice;};
+  totalPrice += delivery;
+  deliveryCost();
+  priceForAllDishes(totalPrice);
+  };
 
 // buttons plus minus
 function plusOne(itemName) {
@@ -86,7 +89,7 @@ function buyArticles() {
   }, 1500);
 };
 
-// basket toggle / visibility
+// basket-toggle /-visibility
 function toggleBasket(){
   if (document.getElementById('two').style.display =='block') {
     document.getElementById('two').style.display ='none'
@@ -96,7 +99,7 @@ function toggleBasket(){
 };
 
 function checkVisibility(totalPrice){
-  if (totalPrice == 0 || totalPrice == 2.5) {
+  if (totalPrice <= 2.5) {
     document.getElementById('two').style.display ='none';
   } else {
     document.getElementById('two').style.display ='block';
@@ -109,4 +112,3 @@ function checkWindowSize(totalPrice){
     document.getElementById('two').style.display ='none';
   };
 };
-checkWindowSize();

@@ -22,13 +22,10 @@ function stars(){
 };
 stars();
 
-function buildInnerBasket(){
-  oneDish.innerHTML += `
-      <div class='innerBasket'>
-        <div id='article'>${item.name}</div>
-        <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
-        <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
-        <div id='price'>${multiplePrice.toFixed(2)} €</div>
-      </div>`;
+function deliveryCost(){
+  document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
+};
+
+function priceForAllDishes(totalPrice){
+  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;checkVisibility(totalPrice);
 };
