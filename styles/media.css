@@ -1,21 +1,20 @@
-@media screen and (min-width: 751px) and (max-width: 1200px){
-    #two {
-        position: fixed;
-        top: 165px;
-        right: 16px;
-        height: fit-content;
-        display: none;
-        z-index: 3;
-        transition: 0.8s;
+@media(max-width: 1020px){
+    #two{
+        position: sticky;
+        bottom: 60px;
     }
 
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-@media(max-width: 900px){
+@media(max-width: 1020px){
     #shoppingBasket{
         display: flex;
         position: fixed;
-        top: 165px;
+        top: 130px;
         right: 16px;
         height: fit-content;
         z-index: 3;
@@ -47,10 +46,6 @@
   .restaurant {
       margin-bottom: 40px;
   }
-/* 
-    #two{
-        display: none;
-    } */
 }
 
 @-webkit-keyframes blink{

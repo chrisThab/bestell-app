@@ -43,13 +43,13 @@
         </nav>
     </header>
     <main>
-        <section id="one" class="smythe-regular" onclick="hideSidebar()">
 
+
+        <section id="one" class="smythe-regular" onclick="hideSidebar()">
             <div class="restaurant">
                 <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen">
                 <div id="restaurantLogo"><img src="./assets/icons/cookingLogo.png" alt="Kochmütze mit Messer"></div>
             </div>
-
             <h1 class="headline">Random-Restaurant</h1>
             <div id="stars">Bewertung: <span id="rating"></span></div>
             <h2 id="linkDishes">Hauptgerichte</h2>
@@ -77,16 +77,17 @@
             </div>
             <div id="dessert"></div>
             <div class="screenTop"><a href="#">nach oben</a></div>
-
-            <div id="shoppingBasket" onclick="toggleBasket()" class="dNone"><img src="./assets/icons/shoppingBag.png"
+            <div id="shoppingBasket" onclick="toggleBasket()"><img src="./assets/icons/shoppingBag.png"
                     alt="Warenkorb"></div>
         </section>
+
+
         <section id="two" class="smythe-regular">
             <div id="outerBasket">
                 <h2 class="basketHeader">Warenkorb</h2>
                 <div id="basket">
                     <div class="innerBasket">
-                        <div id="articles"></div>
+                        <div id="articles">Du hast noch nichts im Warenkorb</div>
                         <div id="counter"></div>
                         <div id="price"></div>
                     </div>
@@ -95,8 +96,9 @@
                 <div id="priceAllDishes"></div>
                 <div id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
             </div>
-            
         </section>
+
+
     </main>
     <footer id="footer">
         <div>

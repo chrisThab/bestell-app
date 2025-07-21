@@ -53,12 +53,12 @@ h1{
 }
 
 #two{
-    display: none;
     border-radius: 6px;
-    height: 100vh;
+    height: fit-content;
     position: sticky;
     top: 130px;
-    z-index: 1;
+    z-index: 3;
+    display: none;
 }
 
 .smythe-regular {
@@ -75,4 +75,8 @@ h2{
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+#shoppingBasket {
+    display: none;
 }
