@@ -103,7 +103,6 @@ function toggleBasket(){
 };
 
 function checkVisibility(totalPrice){
-  let width = window.innerWidth;
   if (totalPrice == 0 || totalPrice == 2.5) {
     document.getElementById('two').style.display ='none';
   } else {

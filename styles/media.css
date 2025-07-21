@@ -14,9 +14,8 @@
     #shoppingBasket{
         display: flex;
         position: fixed;
-        top: 130px;
+        top: 330px;
         right: 16px;
-        height: fit-content;
         z-index: 3;
         transition: 0.8s;
         background-color: rgba(255, 128, 0, 0.6);
@@ -96,5 +95,19 @@
     footer {
         height: fit-content;
         padding: 8px;
+    }
+}
+
+@media(max-width: 400px){
+    #outerBasket{
+        width: 300px;
+        margin-left: 0px;
+    }
+    #innerBasket{
+        padding: 16px 8px;
+
+    }
+    #shoppingBasket{
+        top: 80%;
     }
 }
