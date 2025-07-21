@@ -38,14 +38,7 @@ function updateBasket() {
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
-    oneDish.innerHTML += `
-      <div class='innerBasket'>
-        <div id='article'>${item.name}</div>
-        <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
-        <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
-        <div id='price'>${multiplePrice.toFixed(2)} €</div>
-      </div>`;
+    buildInnerBasket();
       totalPrice += multiplePrice;
     };
     totalPrice += delivery;
