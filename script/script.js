@@ -33,21 +33,30 @@ checkWindowSize();
 // basket update
 function updateBasket() {
   let totalPrice = 0;
+  let counterSum = 0;
   let oneDish = document.getElementById('basket');
   oneDish.innerHTML = '';
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
     oneDish.innerHTML += `<div class='innerBasket'>
-    <div id='article'>${item.name}</div>
-    <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
-    <div id='counter-${item.name}'>${item.counter}</div>
-    <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
-    <div id='price'>${multiplePrice.toFixed(2)} €</div></div>`;
+    <div class="upper">        
+        <div id='article'>${item.name}</div>
+        <div id='price'>${multiplePrice.toFixed(2)} €</div>
+    </div>
+    <div class="lower">
+        <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
+        <div id='counter-${item.name}'>${item.counter}</div>
+        <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
+        <div id="bin" onclick='moveToBin("${item.name}")'><img src="./assets/icons/bin.png" alt="Mistkorb"></div></div>
+    </div>
+    </div>`
+    counterSum += item.counter;
     totalPrice += multiplePrice;};
   totalPrice += delivery;
   deliveryCost();
   priceForAllDishes(totalPrice);
+  checkBasketSize(counterSum);
   };
 
 // buttons plus minus
@@ -73,6 +82,11 @@ function minusOne(itemName) {
     };
     updateBasket();
   };
+};
+
+function moveToBin(name) {;
+  delete basketArticles[name];
+  updateBasket();
 };
 
 // bestellung abschließen
@@ -106,9 +120,52 @@ function checkVisibility(totalPrice){
   };
 };
 
-function checkWindowSize(totalPrice){
+function checkWindowSize(){
   let width = window.innerWidth;
-  if(width < 1020 && totalPrice <= 2.5){
+  if(width < 1020){
     document.getElementById('two').style.display ='none';
+  } else if(counter > 0){
+    document.getElementById('shoppingBasket').style.display ='flex';
+  };
+};
+
+ // get the dishes
+function displayDishes(dishArray, targetDivId) {
+  const targetDiv = document.getElementById(targetDivId);
+  targetDiv.innerHTML = '';
+  for (let index = 0; index < dishArray.length; index++){
+    let element = dishArray[index];
+    targetDiv.innerHTML += `
+    <div id="oneDish" onclick='intoBasket(${JSON.stringify(element)})'>
+      <div class="articleStructure"><div id="theDish">"${element.name}"</div>
+      <div id="theDescription">${element.description}</div>
+      <div id="thePrice">${element.price.toFixed(2)} €</div></div>
+      <div class="addTo"><img src="./assets/icons/plus.png" alt="plusButton"></div>`
+  };};
+displayDishes(dishes, "allDishes");
+displayDishes(sideDishes, "sidedishes");
+displayDishes(desserts, "dessert");
+
+let starRating = 4.2;
+
+function stars(){
+  document.getElementById('rating').innerText =  ` ` + `${starRating} von 5 Sternen`
+};
+stars();
+
+function deliveryCost(){
+  document.getElementById('delivery').innerHTML = `<div>Lieferkosten:</div><div> ${delivery.toFixed(2)} €</div> `;
+};
+
+function priceForAllDishes(totalPrice){
+  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;checkVisibility(totalPrice);
+};
+
+
+function checkBasketSize(counterSum){
+  if(counterSum > 0){
+    document.getElementById('counterSize').innerHTML = counterSum;
+  } else if(counterSum == 0){
+    document.getElementById('counterSize').innerHTML = '';
   };
 };

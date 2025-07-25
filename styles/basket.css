@@ -18,6 +18,7 @@
 .innerBasket{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -94,4 +95,27 @@
     cursor: pointer;
     background-color: rgb(235, 160, 49, 0.4);
     border-radius: 6px;
+}
+
+#bin{
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.lower {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
 }

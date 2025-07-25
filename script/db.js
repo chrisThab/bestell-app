@@ -2,7 +2,7 @@ const dishes = [
     {
         "name": "Gebratete Nudeln",
         "price": 9.80,
-        "description": "Nudeln gebraten mit Gemüse, optional mit Huhn, Rind, Schwein oder Garnelen"
+        "description": "Nudeln, gebraten mit Gemüse, optional mit Huhn, Rind, Schwein oder Garnelen"
     },
     {
         "name": "Pizza Margeritha",
