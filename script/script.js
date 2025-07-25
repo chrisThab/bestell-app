@@ -39,18 +39,7 @@ function updateBasket() {
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
-    oneDish.innerHTML += `<div class='innerBasket'>
-    <div class="upper">        
-        <div id='article'>${item.name}</div>
-        <div id='price'>${multiplePrice.toFixed(2)} €</div>
-    </div>
-    <div class="lower">
-        <button id="minus" onclick='minusOne("${item.name}")'><img src="./assets/icons/minus.png"></button>
-        <div id='counter-${item.name}'>${item.counter}</div>
-        <button id="plus" onclick='plusOne("${item.name}")'><img src="./assets/icons/plus.png"></button>
-        <div id="bin" onclick='moveToBin("${item.name}")'><img src="./assets/icons/bin.png" alt="Mistkorb"></div></div>
-    </div>
-    </div>`
+    basketBuilder(oneDish, item.name, item.counter, multiplePrice);
     counterSum += item.counter;
     totalPrice += multiplePrice;};
   totalPrice += delivery;
@@ -58,6 +47,21 @@ function updateBasket() {
   priceForAllDishes(totalPrice);
   checkBasketSize(counterSum);
   };
+
+function basketBuilder(oneDish, itemName, itemCounter, multiplePrice){
+  oneDish.innerHTML += `<div class='innerBasket'>
+    <div class="upper">        
+        <div id='article'>${itemName}</div>
+        <div id='price'>${multiplePrice.toFixed(2)} €</div>
+    </div>
+    <div class="lower">
+        <button id="minus" onclick='minusOne("${itemName}")'><img src="./assets/icons/minus.png"></button>
+        <div id='counter-${itemName}'>${itemCounter}</div>
+        <button id="plus" onclick='plusOne("${itemName}")'><img src="./assets/icons/plus.png"></button>
+        <div id="bin" onclick='moveToBin("${itemName}")'><img src="./assets/icons/bin.png" alt="Mistkorb"></div></div>
+    </div>
+    </div>`
+};
 
 // buttons plus minus
 function plusOne(itemName) {
@@ -109,23 +113,6 @@ function toggleBasket(){
     document.getElementById('two').style.display ='none'
   } else if(document.getElementById('two').style.display =='none') {
   document.getElementById('two').style.display ='block';
-};
-};
-
-function checkVisibility(totalPrice){
-  if (totalPrice <= 2.5) {
-    document.getElementById('two').style.display ='none';
-  } else {
-    document.getElementById('two').style.display ='block';
-  };
-};
-
-function checkWindowSize(){
-  let width = window.innerWidth;
-  if(width < 1020){
-    document.getElementById('two').style.display ='none';
-  } else if(counter > 0){
-    document.getElementById('shoppingBasket').style.display ='flex';
   };
 };
 
@@ -158,9 +145,9 @@ function deliveryCost(){
 };
 
 function priceForAllDishes(totalPrice){
-  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;checkVisibility(totalPrice);
+  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
+  checkVisibility(totalPrice);
 };
-
 
 function checkBasketSize(counterSum){
   if(counterSum > 0){
@@ -169,3 +156,29 @@ function checkBasketSize(counterSum){
     document.getElementById('counterSize').innerHTML = '';
   };
 };
+
+
+
+// to check
+
+let widthWindow = window.innerWidth;
+function checkVisibility(totalPrice){
+  if (totalPrice > 2.5 && widthWindow > 1020) {
+    document.getElementById('two').style.display ='block';
+  } else {
+    document.getElementById('two').style.display ='none';
+  };
+};
+
+function checkWindowSize(totalPrice){
+  if(widthWindow > 1020 && totalPrice > 2.5){
+    document.getElementById('two').style.display ='none';
+  } else if(counter > 0){
+    document.getElementById('shoppingBasket').style.display ='flex';
+  };
+};
+
+window.addEventListener('resize', function () {
+  checkWindowSize();
+  updateBasket();
+});

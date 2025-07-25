@@ -8,9 +8,11 @@
         flex-direction: column;
         align-items: center;
     }
-}
 
-@media(max-width: 1020px){
+    #shoppingBasket {
+        display: none;
+    }
+
     #shoppingBasket{
         display: flex;
         position: fixed;
