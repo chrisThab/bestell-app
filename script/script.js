@@ -3,6 +3,7 @@ let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
 let maxWidth = window.innerWidth;
+let starRating = 4.2;
 
 // navbar
 function showSidebar() {
@@ -112,28 +113,27 @@ function buyArticles() {
   }, 1500);
 };
 
-// basket-toggle 
+// basket-toggle / visibility
 function toggleBasket(){
-  if (document.getElementById('two').style.display =='block') {document.getElementById('two').style.display ='none'} else if(document.getElementById('two').style.display =='none') {document.getElementById('two').style.display ='block'};
+  if(document.getElementById('two').style.display =='block')
+    {document.getElementById('two').style.display ='none'}
+  else if(document.getElementById('two').style.display =='none')
+    {document.getElementById('two').style.display ='block'};
 };
 
-// function checkVisibility(totalPrice){
-//   if (totalPrice > 2.5) {
-//     document.getElementById('two').style.display ='block';
-//   } else {
-//     document.getElementById('two').style.display ='none';
-//     document.getElementById('shoppingBasket').style.display ='none';
-//   };
-// };
-
 function checkVisibility(totalPrice) {
-  if (totalPrice > 2.5 && window.innerWidth >= 1020) {
+  if (totalPrice > 2.5 && window.innerWidth <= 1019 && document.getElementById('two').style.display == 'block'){
+    document.getElementById('two').style.display = 'block'
+  } else if (totalPrice > 2.5 && window.innerWidth >= 1020) {
     document.getElementById('two').style.display = 'block';
-  } else {
+  } else if (totalPrice > 2.5 && window.innerWidth <= 1019){
     document.getElementById('two').style.display = 'none';
     document.getElementById('shoppingBasket').style.display = 'flex';
-  }
-}
+  } else if(totalPrice <= 2.5){
+    document.getElementById('shoppingBasket').style.display ='none';
+    document.getElementById('two').style.display = 'none';
+  };
+};
 
  // get the dishes
 function displayDishes(dishArray, targetDivId) {
@@ -152,8 +152,7 @@ displayDishes(dishes, "allDishes");
 displayDishes(sideDishes, "sidedishes");
 displayDishes(desserts, "dessert");
 
-let starRating = 4.2;
-
+// auslagerungen
 function stars(){
   document.getElementById('rating').innerText =  ` ` + `${starRating} von 5 Sternen`
 };
