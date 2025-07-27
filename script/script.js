@@ -2,6 +2,7 @@
 let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
+let maxWidth = window.innerWidth;
 
 // navbar
 function showSidebar() {
@@ -15,19 +16,22 @@ function hideSidebar() {
 };
 
 // add to basket
-function intoBasket(dishes) {
-  document.getElementById('two').style = 'display: block';
-  document.getElementById('outerBasket').style = 'display: block';
+function intoBasket(dishes, maxWidth) {
+  if (maxWidth <= 1020) {
+    document.getElementById('two').style.display = 'none';
+  } else {
+    document.getElementById('two').style.display = 'block';
+  };
+  document.getElementById('shoppingBasket').style.display ='flex';
   if (basketArticles[dishes.name]) {
     basketArticles[dishes.name].counter++;
   } else { basketArticles[dishes.name] = {
     name: dishes.name,
     counter: 1,
     price: dishes.price
+    };
   };
-};
 updateBasket();
-checkWindowSize();
 };
 
 // basket update
@@ -46,7 +50,8 @@ function updateBasket() {
   deliveryCost();
   priceForAllDishes(totalPrice);
   checkBasketSize(counterSum);
-  };
+  checkVisibility(totalPrice);
+};
 
 function basketBuilder(oneDish, itemName, itemCounter, multiplePrice){
   oneDish.innerHTML += `<div class='innerBasket'>
@@ -107,14 +112,28 @@ function buyArticles() {
   }, 1500);
 };
 
-// basket-toggle /-visibility
+// basket-toggle 
 function toggleBasket(){
-  if (document.getElementById('two').style.display =='block') {
-    document.getElementById('two').style.display ='none'
-  } else if(document.getElementById('two').style.display =='none') {
-  document.getElementById('two').style.display ='block';
-  };
+  if (document.getElementById('two').style.display =='block') {document.getElementById('two').style.display ='none'} else if(document.getElementById('two').style.display =='none') {document.getElementById('two').style.display ='block'};
 };
+
+// function checkVisibility(totalPrice){
+//   if (totalPrice > 2.5) {
+//     document.getElementById('two').style.display ='block';
+//   } else {
+//     document.getElementById('two').style.display ='none';
+//     document.getElementById('shoppingBasket').style.display ='none';
+//   };
+// };
+
+function checkVisibility(totalPrice) {
+  if (totalPrice > 2.5 && window.innerWidth >= 1020) {
+    document.getElementById('two').style.display = 'block';
+  } else {
+    document.getElementById('two').style.display = 'none';
+    document.getElementById('shoppingBasket').style.display = 'flex';
+  }
+}
 
  // get the dishes
 function displayDishes(dishArray, targetDivId) {
@@ -146,7 +165,6 @@ function deliveryCost(){
 
 function priceForAllDishes(totalPrice){
   document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
-  checkVisibility(totalPrice);
 };
 
 function checkBasketSize(counterSum){
@@ -156,29 +174,3 @@ function checkBasketSize(counterSum){
     document.getElementById('counterSize').innerHTML = '';
   };
 };
-
-
-
-// to check
-
-let widthWindow = window.innerWidth;
-function checkVisibility(totalPrice){
-  if (totalPrice > 2.5 && widthWindow > 1020) {
-    document.getElementById('two').style.display ='block';
-  } else {
-    document.getElementById('two').style.display ='none';
-  };
-};
-
-function checkWindowSize(totalPrice){
-  if(widthWindow > 1020 && totalPrice > 2.5){
-    document.getElementById('two').style.display ='none';
-  } else if(counter > 0){
-    document.getElementById('shoppingBasket').style.display ='flex';
-  };
-};
-
-window.addEventListener('resize', function () {
-  checkWindowSize();
-  updateBasket();
-});

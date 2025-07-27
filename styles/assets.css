@@ -22,7 +22,6 @@ main{
     padding: 16px;
     width: 100%;
     display: flex;
-    transition: 0.4s;
 }
 
 footer{
@@ -37,6 +36,10 @@ footer{
 
 h1{
     font-size: 60px;
+}
+
+.dFlex{
+    display: flex;
 }
 
 .headline {
