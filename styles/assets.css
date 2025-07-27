@@ -53,9 +53,10 @@ h1{
 
 #two{
     border-radius: 6px;
-    height: fit-content;
+    height: 100%;
     position: sticky;
-    top: 130px;
+    top: 0px;
+    right: 0px;
     z-index: 3;
     display: none;
 }
@@ -74,8 +75,4 @@ h2{
     display: flex;
     justify-content: center;
     width: 100%;
-}
-
-#shoppingBasket {
-    display: none;
 }

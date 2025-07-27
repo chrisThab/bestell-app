@@ -123,13 +123,15 @@ function toggleBasket(){
 
 function checkVisibility(totalPrice) {
   let maxWidth = window.innerWidth;
-  if (maxWidth <= 1019 && document.getElementById('two').style.display == 'block'){
-    document.getElementById('two').style.display = 'block'
-  } else {
-    document.getElementById('two').style.display = 'none';
+  if (maxWidth >= 1020 && document.getElementById('two').style.display == 'block'){
+    document.getElementById('two').style.display = 'block';
   };
   if (maxWidth <= 1019 && document.getElementById('two').style.display == 'none'){
     document.getElementById('two').style.display = 'none';
+    document.getElementById('shoppingBasket').style.display = 'flex';
+  };
+  if (maxWidth <= 1019 && document.getElementById('two').style.display == 'block'){
+    document.getElementById('two').style.display = 'block';
     document.getElementById('shoppingBasket').style.display = 'flex';
   };
   if(totalPrice <= 2.5){
