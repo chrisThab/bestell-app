@@ -35,7 +35,7 @@ function intoBasket(dishes, maxWidth) {
 updateBasket();
 };
 
-// basket update
+// basket update / basket builder
 function updateBasket() {
   let totalPrice = 0;
   let counterSum = 0;
@@ -69,7 +69,7 @@ function basketBuilder(oneDish, itemName, itemCounter, multiplePrice){
     </div>`
 };
 
-// buttons plus minus
+// buttons plus minus & delete
 function plusOne(itemName) {
   if (basketArticles[itemName]) {
     if (basketArticles[itemName].counter == 50){
@@ -113,7 +113,7 @@ function buyArticles() {
   }, 1500);
 };
 
-// basket-toggle / visibility
+// basket toggle / visibility
 function toggleBasket(){
   if(document.getElementById('two').style.display =='block')
     {document.getElementById('two').style.display ='none'}
@@ -135,7 +135,7 @@ function checkVisibility(totalPrice) {
   };
 };
 
- // get the dishes
+ // get all dishes
 function displayDishes(dishArray, targetDivId) {
   const targetDiv = document.getElementById(targetDivId);
   targetDiv.innerHTML = '';

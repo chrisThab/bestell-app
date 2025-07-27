@@ -49,9 +49,9 @@
         top: 80%;
     }
 
-  .restaurant {
-      margin-bottom: 40px;
-  }
+    .restaurant {
+        margin-bottom: 40px;
+    }
 }
 
 @-webkit-keyframes blink{
