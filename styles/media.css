@@ -1,9 +1,8 @@
 #shoppingBasket{
     position: sticky;
-    top: 16px;
     margin-left: 16px;
     display: none;
-    transition: 0.8s;
+    transition: 0.7s;
     background-color: rgba(255, 128, 0, 0.6);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -57,13 +56,14 @@
 
     #shoppingBasket{
         position: sticky;
-        bottom: 0px;
+        bottom: 16px;
+        left: 50%;
     }
 }
 
 @-webkit-keyframes blink{
     0%, 10%{
-    background-color: rgba(255, 128, 0, 0.1);
+    background-color: rgba(255, 128, 0, 0);
     }
     11%, 20%{
     background-color: rgba(255, 128, 0, 0.2);
