@@ -1,7 +1,7 @@
 #shoppingBasket{
-    position: fixed;
-    bottom: 16px;
-    right: 100px;
+    position: sticky;
+    top: 16px;
+    margin-left: 16px;
     display: none;
     transition: 0.8s;
     background-color: rgba(255, 128, 0, 0.6);
@@ -34,16 +34,16 @@
     top: 22px;
 }
 
-@media(max-width: 1020px){
+@media(max-width: 1075px){
     #two{
         display: none;
-        height: 100vh;
+        height: 100%;
         position: fixed;
+        overflow-y: scroll;
     }
 
     #outerBasket{
         display: none;
-        height: 100vh;
     }
 
     main{
@@ -53,6 +53,11 @@
 
     .restaurant {
         margin-bottom: 40px;
+    }
+
+    #shoppingBasket{
+        position: sticky;
+        bottom: 0px;
     }
 }
 
@@ -110,12 +115,10 @@
 @media(max-width: 490px){
     #outerBasket{
         width: 100%;
-        height: 100%;
         margin-left: 0px;
     }
     #innerBasket{
         padding: 16px 8px;
-
     }
     
     #two{
@@ -124,15 +127,6 @@
         position: fixed;
         top: 0px;
         margin-right: 0px;
-    }
-}
-
-@media(max-height: 800px){
-    #two{
-        overflow-y: scroll;
-    }
-    
-    #outerBasket{
-        height: fit-content;
+        overflow-y: auto;
     }
 }

@@ -46,6 +46,11 @@ const sideDishes = [
         "name": "Naan_Brot",
         "price": 2.50,
         "description": "Typisch indisches Brot, passend zu vielen Rezepten"
+    },
+    {
+        "name": "Petersil-Erdäpfel",
+        "price": 5.50,
+        "description": "Die Kartoffel frisch vom Markt, passend zu vielen Gerichten"
     }
 ];
 
