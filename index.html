@@ -20,27 +20,29 @@
     rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 class="smythe-regular">BestellApp</h1>
-        <nav>
-            <ul class="sidebar" onclick="toggleSidebar()">
-                <li class="closer"><img src="./assets/icons/close.png" alt="schließen"></li>
-                <li><a href="#linkDishes">Hauptgerichte</a></li>
-                <li><a href="#besides">Beilagen</a></li>
-                <li><a href="#sweets">Desserts</a></li>
-                <li><a href="#footer">Kontakt</a></li>
-            </ul>
-            <ul>
-                <li class="hideOnMobile"><a href="#linkDishes">Hauptgerichte</a></li>
-                <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
-                <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
-                <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
-                <li class="menuBtn" onclick="toggleSidebar()"><a href="#"><img src="./assets/icons/burgerMenu.svg" alt="BurgerMenu"></a></li>
-            </ul>
-        </nav>
+    <header class="imgHead">
+        <div class="headerContent">
+            <h1>BestellApp</h1>
+            <nav>
+                <ul class="sidebar" onclick="toggleSidebar()">
+                    <li class="closer"><img src="./assets/icons/close.png" alt="schließen"></li>
+                    <li><a href="#linkDishes">Hauptgerichte</a></li>
+                    <li><a href="#besides">Beilagen</a></li>
+                    <li><a href="#sweets">Desserts</a></li>
+                    <li><a href="#footer">Kontakt</a></li>
+                </ul>
+                <ul>
+                    <li class="hideOnMobile"><a href="#linkDishes">Hauptgerichte</a></li>
+                    <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
+                    <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
+                    <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
+                    <li class="menuBtn" onclick="toggleSidebar()"><a href="#"><img src="./assets/icons/burgerMenu.svg" alt="BurgerMenu"></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main onclick="hideSidebar()">
-        <section id="one" class="smythe-regular" onclick="">
+        <section id="one">
             <div class="restaurant">
                 <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen">
                 <div id="restaurantLogo"><img src="./assets/icons/cookingLogo.png" alt="Kochmütze mit Messer"></div>
@@ -76,7 +78,7 @@
         <div id="shoppingBasket" onclick="toggleBasket()"><img src="./assets/icons/shoppingBag.png" alt="Warenkorb">
             <div id="counterSize"></div>
         </div>
-        <section id="two" class="smythe-regular">
+        <section id="two">
             <div id="outerBasket">
                 <h2 class="basketHeader">Warenkorb</h2>
                 <div id="basket">

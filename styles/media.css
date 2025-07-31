@@ -1,5 +1,6 @@
 #shoppingBasket{
     position: sticky;
+    top: 0px;
     margin-left: 16px;
     display: none;
     transition: 0.7s;
@@ -33,64 +34,32 @@
     top: 22px;
 }
 
-@media(max-width: 1075px){
-    #two{
-        display: none;
-        height: 100%;
-        position: fixed;
-        overflow-y: scroll;
+@media(max-width: 1920px){
+    body{
+        width: 100%;
     }
-
-    #outerBasket{
-        display: none;
-    }
-
     main{
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+    }
+}
+
+@media(max-width: 1075px){
+    main{
+        flex-direction: row;
     }
 
     .restaurant {
         margin-bottom: 40px;
     }
-
-    #shoppingBasket{
-        position: sticky;
-        bottom: 16px;
-        left: 50%;
-    }
 }
 
-@-webkit-keyframes blink{
-    0%, 10%{
-    background-color: rgba(255, 128, 0, 0);
+@media(max-width: 1000px){
+    #two{
+        display: none;
     }
-    11%, 20%{
-    background-color: rgba(255, 128, 0, 0.2);
-    }
-    21%, 30%{
-    background-color: rgba(255, 128, 0, 0.4);
-    }
-    31%, 40%{
-    background-color: rgba(255, 128, 0, 0.6);
-    }
-    41%, 50%{
-    background-color: rgba(255, 128, 0, 0.8);
-    }
-    51%, 60%{
-    background-color: rgba(255, 128, 0, 0.8);
-    }
-    61%, 70%{
-    background-color: rgba(255, 128, 0, 0.6);
-    }
-    71%, 80%{
-    background-color: rgba(255, 128, 0, 0.4);
-    }
-    81%, 90%{
-    background-color: rgba(255, 128, 0, 0.2);
-    }
-    91%, 100%{
-    background-color: rgba(255, 128, 0, 0.1);
+
+    #outerbasket{
+        display: none;
     }
 }
 
@@ -127,6 +96,38 @@
         position: fixed;
         top: 0px;
         margin-right: 0px;
-        overflow-y: auto;
+    }
+
+    #shoppingBasket{
+        left: 50%;
+    }
+}
+
+@media screen and (max-height: 1200px){
+    #two{
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes blink {
+    0%, 10% {background-color: rgba(255, 128, 0, 0);
+    }
+    11%, 20% {background-color: rgba(255, 128, 0, 0.2);
+    }
+    21%, 30% {background-color: rgba(255, 128, 0, 0.4);
+    }
+    31%, 40% {background-color: rgba(255, 128, 0, 0.6);
+    }
+    41%, 50% {background-color: rgba(255, 128, 0, 0.8);
+    }
+    51%, 60% { background-color: rgba(255, 128, 0, 0.8);
+    }
+    61%, 70% {background-color: rgba(255, 128, 0, 0.6);
+    }
+    71%, 80% {background-color: rgba(255, 128, 0, 0.4);
+    }
+    81%, 90% {background-color: rgba(255, 128, 0, 0.2);
+    }
+    91%, 100% { background-color: rgba(255, 128, 0, 0.1);
     }
 }

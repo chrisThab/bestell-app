@@ -92,8 +92,17 @@
     width: 100%;
     padding: 16px;
     cursor: pointer;
+    font-weight: bold;
     background-color: rgb(235, 160, 49, 0.4);
     border-radius: 6px;
+    -webkit-animation: blink 1.5s infinite;
+    -moz-animation: blink 1.5s infinite;
+    -o-animation: blink 1.5s infinite;
+    animation: blink 1.5s infinite;
+}
+
+#buy:hover{
+    background-color: rgba(255, 128, 0, 1);
 }
 
 #bin{

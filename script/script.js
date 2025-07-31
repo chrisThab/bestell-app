@@ -24,10 +24,8 @@ function hideSidebar() {
 
 // add to basket
 function intoBasket(dishes) {
-  let maxWidth = window.innerWidth;
-  if (maxWidth <= 1020) {
-    document.getElementById('two').style.display = 'none';} else {
-    document.getElementById('two').style.display = 'block';};
+    document.getElementById('two').style.display = 'none';
+    document.getElementById('two').style.display = 'block';
   document.getElementById('shoppingBasket').style.display ='flex';
   if (basketArticles[dishes.name]) {
     basketArticles[dishes.name].counter++;
@@ -48,7 +46,7 @@ function updateBasket() {
   for (let key in basketArticles) {
     let item = basketArticles[key];
     let multiplePrice = item.price * item.counter;
-    builder(oneDish, item.name, item.counter, multiplePrice);
+    oneDish.innerHTML += builder(item.name, item.counter, multiplePrice);
     counterSum += item.counter;
     totalPrice += multiplePrice;};
   totalPrice += delivery;
@@ -137,7 +135,9 @@ function deliveryCost(){
 };
 
 function priceForAllDishes(totalPrice){
-  document.getElementById('priceAllDishes').innerHTML = `<div>${'Gesamtpreis:'}</div><div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
+  document.getElementById('priceAllDishes').innerHTML = `
+  <div>${'Gesamtpreis:'}</div>
+  <div><strong>${totalPrice.toFixed(2)} €</strong></div>`;
 };
 
 function checkBasketSize(counterSum){
