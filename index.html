@@ -1,110 +1,141 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="App zum bestellen von Essen"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bestell-app</title>
-    <link rel="shortcut icon" href="./assets/icons/icon.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/icon.png"
+      type="image/x-icon"
+    />
 
-    <link rel="stylesheet" href="./styles/standard.css">
-    <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./styles/navstyle.css">
-    <link rel="stylesheet" href="./styles/imagesAndIcons.css">
-    <link rel="stylesheet" href="./styles/dishes.css">
-    <link rel="stylesheet" href="./styles/basket.css">
-    <link rel="stylesheet" href="./styles/media.css">
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/navstyle.css" />
+    <link rel="stylesheet" href="./styles/imagesAndIcons.css" />
+    <link rel="stylesheet" href="./styles/dishes.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Smythe&display=swap" 
-    rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="imgHead">
-        <div class="headerContent">
-            <h1>BestellApp</h1>
-            <nav>
-                <ul class="sidebar" onclick="toggleSidebar()">
-                    <li class="closer"><img src="./assets/icons/close.png" alt="schließen"></li>
-                    <li><a href="#linkDishes">Hauptgerichte</a></li>
-                    <li><a href="#besides">Beilagen</a></li>
-                    <li><a href="#sweets">Desserts</a></li>
-                    <li><a href="#footer">Kontakt</a></li>
-                </ul>
-                <ul>
-                    <li class="hideOnMobile"><a href="#linkDishes">Hauptgerichte</a></li>
-                    <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
-                    <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
-                    <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
-                    <li class="menuBtn" onclick="toggleSidebar()"><a href="#"><img src="./assets/icons/burgerMenu.svg" alt="BurgerMenu"></a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="headerContent">
+        <h1>BestellApp</h1>
+        <nav>
+          <ul class="sidebar" id="sidebar">
+            <li class="closer" onclick="toggleSidebar(event)">
+              <img src="./assets/icons/close.png" alt="schließen" />
+            </li>
+            <li><a href="#linkDishes">Hauptgerichte</a></li>
+            <li><a href="#besides">Beilagen</a></li>
+            <li><a href="#sweets">Desserts</a></li>
+            <li><a href="#footer">Kontakt</a></li>
+          </ul>
+          <ul>
+            <li class="hideOnMobile">
+              <a href="#linkDishes">Hauptgerichte</a>
+            </li>
+            <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
+            <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
+            <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
+            <li class="menuBtn" onclick="toggleSidebar(event)">
+              <a href="#"
+                ><img src="./assets/icons/burgerMenuBlack.png" alt="BurgerMenu"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="shoppingBasket" onclick="toggleBasket(), toggleMediaBasket()">
+        <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png" alt="Warenkorb" />
+        <div id="counterSize"></div>
+      </div>
     </header>
     <main onclick="hideSidebar()">
-        <section id="one">
-            <div class="restaurant">
-                <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen">
-                <div id="restaurantLogo"><img src="./assets/icons/cookingLogo.png" alt="Kochmütze mit Messer"></div>
-            </div>
-            <h1 class="headline">Random-Restaurant</h1>
-            <div id="stars">Bewertung: <span id="rating"></span></div>
-            <h2 id="linkDishes">Hauptgerichte</h2>
-            <div class="dishes">
-                <img src="./assets/img/schnitzel.jpg" alt="schnitzel">
-                <img src="./assets/img/salat.jpg" alt="Salat">
-                <img src="./assets/img/pizza.jpg" alt="Pizza">
-                <img src="./assets/img/nudeln.jpg" alt="Nudeln">
-            </div>
-            <div id="allDishes"></div>
-            <h2 id="besides">Beilagen</h2>
-            <div class="dishes">
-                <img src="./assets/img/salad.jpg" alt="Vogerlsalat">
-                <img src="./assets/img/rice.jpg" alt="reis">
-                <img src="./assets/img/dumplings.jpg" alt="semmelknödel">
-                <img src="./assets/img/naan.jpg" alt="naan-brot">
-            </div>
-            <div id="sidedishes"></div>
-            <h2 id="sweets">Desserts</h2>
-            <div class="dishes">
-                <img src="./assets/img/tiramisu.jpg" alt="tiramisu">
-                <img src="./assets/img/joghurt.jpg" alt="Weichseljoghurt">
-                <img src="./assets/img/ice.jpg" alt="Eisbecher">
-                <img src="./assets/img/crepe.jpg" alt="Palatschinken">
-            </div>
-            <div id="dessert"></div>
-            <div class="screenTop"><a href="#">nach oben</a></div>
-        </section>
-        <div id="shoppingBasket" onclick="toggleBasket()"><img src="./assets/icons/shoppingBag.png" alt="Warenkorb">
-            <div id="counterSize"></div>
+      <section class="one" id="one">
+        <div class="restaurant">
+          <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen" />
+          <div id="restaurantLogo">
+            <img
+              src="./assets/icons/cookingLogo.png"
+              alt="Kochmütze mit Messer"
+            />
+          </div>
         </div>
-        <section id="two">
-            <div id="outerBasket">
-                <h2 class="basketHeader">Warenkorb</h2>
-                <div id="basket">
-                    <div class="innerBasket">
-                        <div id="articles"></div>
-                        <div id="counter"></div>
-                        <div id="price"></div>
-                    </div>
-                </div>
-                <div id="delivery"></div>
-                <div id="priceAllDishes"></div>
-                <div id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
+        <h1 class="headline">Random-Restaurant</h1>
+        <div id="stars">Bewertung: <span id="rating"></span></div>
+        <h2 id="linkDishes">Hauptgerichte</h2>
+        <div class="dishes">
+          <img src="./assets/img/schnitzel.jpg" alt="schnitzel" />
+          <img src="./assets/img/salat.jpg" alt="Salat" />
+          <img src="./assets/img/pizza.jpg" alt="Pizza" />
+          <img src="./assets/img/nudeln.jpg" alt="Nudeln" />
+        </div>
+        <div id="allDishes"></div>
+        <h2 id="besides">Beilagen</h2>
+        <div class="dishes">
+          <img src="./assets/img/salad.jpg" alt="Vogerlsalat" />
+          <img src="./assets/img/rice.jpg" alt="reis" />
+          <img src="./assets/img/dumplings.jpg" alt="semmelknödel" />
+          <img src="./assets/img/naan.jpg" alt="naan-brot" />
+        </div>
+        <div id="sidedishes"></div>
+        <h2 id="sweets">Desserts</h2>
+        <div class="dishes">
+          <img src="./assets/img/tiramisu.jpg" alt="tiramisu" />
+          <img src="./assets/img/joghurt.jpg" alt="Weichseljoghurt" />
+          <img src="./assets/img/ice.jpg" alt="Eisbecher" />
+          <img src="./assets/img/crepe.jpg" alt="Palatschinken" />
+        </div>
+        <div id="dessert"></div>
+        <div class="screenTop"><a href="#">nach oben</a></div>
+      </section>
+      <section class="two" id="two">
+        <div class="theBasket" id="outerBasket">
+          <h2 class="basketHeader">Warenkorb</h2>
+          <div id="basket">
+            <div class="innerBasket">
+              <div id="articles"></div>
+              <div id="counter"></div>
+              <div id="price"></div>
             </div>
-        </section>
+          </div>
+          <div id="delivery"></div>
+          <div id="priceAllDishes"></div>
+          <div id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
+        </div>
+      </section>
     </main>
     <footer id="footer">
-        <div>
-            <a href="https://www.facebook.com/"><img src="./assets/icons/facebook.png" alt="facebook-logo"></a>
-            <a href="https://www.twitter.com/"><img src="./assets/icons/twitterpng.webp" alt="x-logo"></a>
-            <a href="https://www.instagram.com/"><img src="./assets/icons/instagram.png" alt="instagram-logo"></a>
-        </div>
-        <div class="team">Code wurde geschrieben von Christian Thabar im Auftrag der Developer Akademie</div><br>
-        <div class="officials">Hier ist Platz für Kontaktdaten und Impressum</div>
+      <div>
+        <a href="https://www.facebook.com/"
+          ><img src="./assets/icons/facebook.png" alt="facebook-logo"
+        /></a>
+        <a href="https://www.twitter.com/"
+          ><img src="./assets/icons/twitterpng.webp" alt="x-logo"
+        /></a>
+        <a href="https://www.instagram.com/"
+          ><img src="./assets/icons/instagram.png" alt="instagram-logo"
+        /></a>
+      </div>
+      <div class="team">
+        Code wurde geschrieben von Christian Thabar im Auftrag der Developer
+        Akademie
+      </div>
+      <br />
+      <div class="officials">Hier ist Platz für Kontaktdaten und Impressum</div>
     </footer>
     <script src="./script/db.js"></script>
     <script src="./script/templates.js"></script>
     <script src="./script/script.js"></script>
-</body>
+  </body>
 </html>
