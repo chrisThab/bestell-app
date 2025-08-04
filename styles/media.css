@@ -48,25 +48,8 @@
     padding: 40px 20px;
   }
 
-  .mediaBasket {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    min-width: 300px;
-  }
-
-  .mediaBasket::backdrop {
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
-  }
-
   #outerBasket {
     margin-left: 0px;
-  }
-
-  .mediaDNone {
-    display: none;
   }
 
   main {

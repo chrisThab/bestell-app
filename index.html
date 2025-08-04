@@ -5,12 +5,8 @@
     <meta name="description" content="App zum bestellen von Essen"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bestell-app</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/icons/icon.png"
-      type="image/x-icon"
-    />
-
+    <link rel="shortcut icon" href="./assets/icons/icon.png" type="image/x-icon" />
+    
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/navstyle.css" />
@@ -27,27 +23,27 @@
     />
   </head>
   <body>
-    <header class="imgHead">
+    <header class="imgHead" alt="container für header">
       <div class="headerContent">
         <h1>BestellApp</h1>
         <nav>
           <ul class="sidebar" id="sidebar">
-            <li class="closer" onclick="toggleSidebar(event)">
-              <img src="./assets/icons/close.png" alt="schließen" />
+            <li class="closer" tabindex="0" enterkeyhint="enter" onclick="toggleSidebar(event)">
+              <img src="./assets/icons/close.png" alt="schließen der Sidebar" />
             </li>
-            <li><a href="#linkDishes">Hauptgerichte</a></li>
-            <li><a href="#besides">Beilagen</a></li>
-            <li><a href="#sweets">Desserts</a></li>
-            <li><a href="#footer">Kontakt</a></li>
+            <li><a tabindex="0" enterkeyhint="enter" href="#linkDishes">Hauptgerichte</a></li>
+            <li><a tabindex="0" enterkeyhint="enter" href="#besides">Beilagen</a></li>
+            <li><a tabindex="0" enterkeyhint="enter" href="#sweets">Desserts</a></li>
+            <li><a tabindex="0" enterkeyhint="enter" href="#footer">Kontakt</a></li>
           </ul>
           <ul>
             <li class="hideOnMobile">
               <a href="#linkDishes">Hauptgerichte</a>
             </li>
-            <li class="hideOnMobile"><a href="#besides">Beilagen</a></li>
-            <li class="hideOnMobile"><a href="#sweets">Desserts</a></li>
-            <li class="hideOnMobile"><a href="#footer">Kontakt</a></li>
-            <li class="menuBtn" onclick="toggleSidebar(event)">
+            <li tabindex="0" enterkeyhint="enter" class="hideOnMobile"><a href="#besides">Beilagen</a></li>
+            <li tabindex="0" enterkeyhint="enter" class="hideOnMobile"><a href="#sweets">Desserts</a></li>
+            <li tabindex="0" enterkeyhint="enter" class="hideOnMobile"><a href="#footer">Kontakt</a></li>
+            <li tabindex="0" enterkeyhint="enter" class="menuBtn" onclick="toggleSidebar(event)">
               <a href="#"
                 ><img src="./assets/icons/burgerMenuBlack.png" alt="BurgerMenu"
               /></a>
@@ -55,7 +51,7 @@
           </ul>
         </nav>
       </div>
-      <div id="shoppingBasket" onclick="toggleBasket(), toggleMediaBasket()">
+      <div id="shoppingBasket" onclick="toggleBasket()">
         <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png" alt="Warenkorb" />
         <div id="counterSize"></div>
       </div>
@@ -111,7 +107,7 @@
           </div>
           <div id="delivery"></div>
           <div id="priceAllDishes"></div>
-          <div id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
+          <div tabindex="0" enterkeyhint="enter" id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
         </div>
       </section>
     </main>

@@ -17,11 +17,11 @@ function builder(itemName, itemCounter, multiplePrice){
 
 function display(element){
     return `
-    <div id="oneDish">
+    <div id="oneDish" tabindex='0'>
         <div class="articleStructure">
             <div id="theDish">"${element.name}"</div>
             <div id="theDescription">${element.description}</div>
             <div id="thePrice">${element.price.toFixed(2)} €</div>
         </div>
-    <div class="addTo" onclick='intoBasket(${JSON.stringify(element)})'><img src="./assets/icons/plus.png" alt="plusButton"></div>`
+    <div class="addTo" tabindex="0" enterkeyhint="enter" onclick='intoBasket(${JSON.stringify(element)})'><img src="./assets/icons/plus.png" alt="plusButton"></div>`
 };
