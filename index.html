@@ -8,12 +8,14 @@
     <link rel="shortcut icon" href="./assets/icons/icon.png" type="image/x-icon" />
     
     <link rel="stylesheet" href="./styles/standard.css" />
-    <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/navstyle.css" />
     <link rel="stylesheet" href="./styles/imagesAndIcons.css" />
     <link rel="stylesheet" href="./styles/dishes.css" />
-    <link rel="stylesheet" href="./styles/basket.css" />
-    <link rel="stylesheet" href="./styles/media.css" />
+    <!-- <link rel="stylesheet" href="./styles/assets.css" /> -->
+    <!-- <link rel="stylesheet" href="./styles/basket.css" /> -->
+    <!-- <link rel="stylesheet" href="./styles/media.css" /> -->
+
+    <link rel="stylesheet" href="./styles/tryOut.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,10 +25,10 @@
     />
   </head>
   <body>
-    <header class="imgHead" alt="container für header">
-      <div class="headerContent">
+    <header>
         <h1>BestellApp</h1>
-        <nav>
+        <div class="navAndBasket">
+          <nav>
           <ul class="sidebar" id="sidebar">
             <li class="closer" tabindex="0" enterkeyhint="enter" onclick="toggleSidebar(event)">
               <img src="./assets/icons/close.png" alt="schließen der Sidebar" />
@@ -49,25 +51,22 @@
               /></a>
             </li>
           </ul>
-        </nav>
-      </div>
-      <div id="shoppingBasket" onclick="toggleBasket()">
-        <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png" alt="Warenkorb" />
-        <div id="counterSize"></div>
-      </div>
+          </nav>
+          <div id="shoppingBasket" class="shoppingBasket" onclick="toggleBasket()">
+            <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png"   alt="Warenkorb" />
+            <div id="counterSize"></div>
+          </div>
+        </div>
     </header>
     <main onclick="hideSidebar()">
-      <section class="one" id="one">
+      <section class="one mediaOne" id="one">
         <div class="restaurant">
           <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen" />
           <div id="restaurantLogo">
-            <img
-              src="./assets/icons/cookingLogo.png"
-              alt="Kochmütze mit Messer"
-            />
+            <img src="./assets/icons/cookingLogo.png" alt="Kochmütze mit Messer" />
           </div>
         </div>
-        <h1 class="headline">Random-Restaurant</h1>
+        <h1>Random-Restaurant</h1>
         <div id="stars">Bewertung: <span id="rating"></span></div>
         <h2 id="linkDishes">Hauptgerichte</h2>
         <div class="dishes">
@@ -97,7 +96,7 @@
       </section>
       <section class="two" id="two">
         <div class="theBasket" id="outerBasket">
-          <h2 class="basketHeader">Warenkorb</h2>
+            <h2 class="basketHeader">Warenkorb</h2>
           <div id="basket">
             <div class="innerBasket">
               <div id="articles"></div>

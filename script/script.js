@@ -3,6 +3,7 @@ let counter = 1;
 let delivery = 2.5;
 let basketArticles = {};
 let starRating = 4.2;
+let smallWidth = window.innerWidth;
 
 // navbar toggle
 function toggleSidebar(event) {
@@ -94,18 +95,12 @@ function minusOne(itemName) {
   };
 }
 
-
 // basket toggle
 function toggleBasket() {
-  let basket = document.getElementById("two");
-  basket.classList.toggle("dFlex");
-}
-
-function toggleMediaBasket(){
-  let two = document.getElementById("two");
-  let one = document.getElementById("one");
-  let basket = document.getElementById("outerBasket");
-  
+  const two = document.getElementById("two");
+  two.classList.toggle('dFlex');
+  const one = document.getElementById('one');
+  one.classList.toggle('mediaOne');
 }
 
 function toggleShoppingBag(totalPrice) {
@@ -185,8 +180,10 @@ function checkBasketSize(counterSum) {
 function checkVisibility(totalPrice) {
   let refOI = document.getElementById("shoppingBasket");
   let refOII = document.getElementById("two");
+  let refOIII = document.getElementById('outerBasket');
   if (totalPrice <= 2.5) {
     refOI.classList.remove("dFlex");
     refOII.classList.remove("dFlex");
+    refOIII.classList.remove('dFlex');
   };
 }

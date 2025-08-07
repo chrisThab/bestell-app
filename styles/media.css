@@ -19,11 +19,6 @@
     display: none;
   }
 
-  .one {
-    display: block;
-    width: 100%;
-  }
-
   .restaurant {
     margin-bottom: 40px;
   }
@@ -48,20 +43,35 @@
     padding: 40px 20px;
   }
 
-  #outerBasket {
-    margin-left: 0px;
-  }
-
-  main {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
   body{
     display: flex;
     justify-content: space-between;
   }
+
+  main{
+    justify-content: flex-end;
+    padding: 8px;
+    margin: 0px;
+  }
+
+  .one{
+
+  }
+
+  .two{
+    justify-content: space-evenly;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  #outerBasket {
+    margin-left: 0px;
+  }
+
+  #basketBtnClose{
+    display: flex;
+  }
+
 }
 
 @media (max-width: 430px) {
@@ -74,12 +84,11 @@
   }
 
   main {
-    text-align: center;
-    padding: 4px;
+    padding: 0px;
   }
 
   .one {
-    padding: 4px;
+
   }
 
   .dishes {
@@ -92,44 +101,25 @@
 }
 
 @-webkit-keyframes blink {
-  0%,
-  10% {
+  0%, 10% {
     background-color: rgba(255, 128, 0, 1);
-  }
-  11%,
-  20% {
+  } 11%, 20% {
     background-color: rgba(255, 128, 0, 0.8);
-  }
-  21%,
-  30% {
+  } 21%, 30% {
     background-color: rgba(255, 128, 0, 0.6);
-  }
-  31%,
-  40% {
+  } 31%, 40% {
     background-color: rgba(255, 128, 0, 0.4);
-  }
-  41%,
-  50% {
+  } 41%, 50% {
     background-color: rgba(255, 128, 0, 0.2);
-  }
-  51%,
-  60% {
+  } 51%, 60% {
     background-color: rgba(255, 128, 0, 0);
-  }
-  61%,
-  70% {
+  } 61%, 70% {
     background-color: rgba(255, 128, 0, 0.4);
-  }
-  71%,
-  80% {
+  } 71%, 80% {
     background-color: rgba(255, 128, 0, 0.6);
-  }
-  81%,
-  90% {
+  } 81%, 90% {
     background-color: rgba(255, 128, 0, 0.8);
-  }
-  91%,
-  100% {
+  } 91%, 100% {
     background-color: rgba(255, 128, 0, 1);
   }
 }
