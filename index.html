@@ -11,11 +11,8 @@
     <link rel="stylesheet" href="./styles/navstyle.css" />
     <link rel="stylesheet" href="./styles/imagesAndIcons.css" />
     <link rel="stylesheet" href="./styles/dishes.css" />
-    <!-- <link rel="stylesheet" href="./styles/assets.css" /> -->
-    <!-- <link rel="stylesheet" href="./styles/basket.css" /> -->
-    <!-- <link rel="stylesheet" href="./styles/media.css" /> -->
-
-    <link rel="stylesheet" href="./styles/tryOut.css">
+    <link rel="stylesheet" href="./styles/basket.css" />
+    <link rel="stylesheet" href="./styles/assets.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +23,7 @@
   </head>
   <body>
     <header>
+      <div class="headerContent">
         <h1>BestellApp</h1>
         <div class="navAndBasket">
           <nav>
@@ -52,14 +50,15 @@
             </li>
           </ul>
           </nav>
-          <div id="shoppingBasket" class="shoppingBasket" onclick="toggleBasket()">
-            <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png"   alt="Warenkorb" />
+          <div id="shoppingBasket" class="shoppingBasket btn dNone" onclick="toggleBasket()">
+            <img id="imgShoppingBag" class="dNone" src="./assets/icons/shoppingBag.png" alt="Warenkorb" />
             <div id="counterSize"></div>
           </div>
         </div>
+      </div>
     </header>
     <main onclick="hideSidebar()">
-      <section class="one mediaOne" id="one">
+      <section class="one" id="one">
         <div class="restaurant">
           <img src="./assets/img/mediteranesEssen.jpg" alt="mediteranesEssen" />
           <div id="restaurantLogo">
@@ -92,22 +91,22 @@
           <img src="./assets/img/crepe.jpg" alt="Palatschinken" />
         </div>
         <div id="dessert"></div>
-        <div class="screenTop"><a href="#">nach oben</a></div>
+        <div class="screenTop"><a class="border" href="#">nach oben</a></div>
       </section>
-      <section class="two" id="two">
-        <div class="theBasket" id="outerBasket">
-            <h2 class="basketHeader">Warenkorb</h2>
+      <section class="two dNone" id="two">
+        <!-- <div class="theBasket" id="outerBasket"> -->
+          <h2 class="basketHeader">Warenkorb</h2>
           <div id="basket">
-            <div class="innerBasket">
+            <!-- <div class="innerBasket"> -->
               <div id="articles"></div>
               <div id="counter"></div>
               <div id="price"></div>
-            </div>
+            <!-- </div> -->
           </div>
-          <div id="delivery"></div>
-          <div id="priceAllDishes"></div>
-          <div tabindex="0" enterkeyhint="enter" id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
-        </div>
+          <div class="upper" id="delivery"></div>
+          <div class="upper" id="priceAllDishes"></div>
+          <div tabindex="0" enterkeyhint="enter" class="btn" id="buy" onclick="buyArticles()">Jetzt bestellen !</div>
+        <!-- </div> -->
       </section>
     </main>
     <footer id="footer">

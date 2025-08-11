@@ -98,8 +98,8 @@ function minusOne(itemName) {
 // basket toggle
 function toggleBasket() {
   const two = document.getElementById("two");
-  two.classList.toggle('dFlex');
   const one = document.getElementById('one');
+  two.classList.toggle('dFlex');
   one.classList.toggle('mediaOne');
 }
 
@@ -180,10 +180,10 @@ function checkBasketSize(counterSum) {
 function checkVisibility(totalPrice) {
   let refOI = document.getElementById("shoppingBasket");
   let refOII = document.getElementById("two");
-  let refOIII = document.getElementById('outerBasket');
+  let refOIII = document.getElementById('one');
   if (totalPrice <= 2.5) {
     refOI.classList.remove("dFlex");
     refOII.classList.remove("dFlex");
-    refOIII.classList.remove('dFlex');
+    refOIII.classList.remove('mediaOne');
   };
 }

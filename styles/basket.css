@@ -4,21 +4,18 @@
   background-color: rgb(235, 160, 49, 0.4);
   height: fit-content;
   border-radius: 6px;
-  padding: 16px;
+  padding: 4px;
   flex-direction: column;
-  gap: 6px;
 }
 
 .basketHeader {
   text-align: center;
   width: 100%;
+  padding: 6px 0 6px 0;
 }
 
 .innerBasket {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100%;
+  padding: 4px;
 }
 
 #plus {
@@ -50,7 +47,7 @@
 }
 
 #article {
-  width: 50%;
+  width: 75%;
 }
 
 #counter {
@@ -120,6 +117,6 @@
 .lower {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  width: 50%;
+  height: 24px;
+  width: 60%;
 }

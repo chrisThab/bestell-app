@@ -9,3 +9,19 @@ a{
     text-decoration: none;
     color: black;
 }
+
+.btn{
+    cursor: pointer;
+}
+
+.dBlock {
+    display: block;
+}
+
+.dFlex {
+    display: flex;
+}
+
+.dNone {
+    display: none;
+}
